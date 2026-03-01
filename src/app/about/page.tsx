@@ -7,10 +7,12 @@ export const metadata = {
 };
 
 export default function AboutPage() {
+  const wrapper = "mx-auto w-full max-w-[1200px]";
+
   return (
     <div>
-      <section className="bg-[#f9fbf9] px-[10%] py-[80px] max-md:px-5 max-md:py-[60px]">
-        <div className="mx-auto max-w-[1100px]">
+      <section className="bg-[#f9fbf9] px-6 py-[80px] md:px-10 max-md:py-[60px] lg:px-14">
+        <div className={wrapper}>
           <div className="flex items-start justify-between gap-[40px] max-md:flex-col max-md:gap-5">
             <div className="flex-1">
               <h1 className="m-0 text-[42px] leading-[1.1] font-extrabold text-[#164232] max-md:text-[32px]">
@@ -30,40 +32,42 @@ export default function AboutPage() {
       </section>
 
       <section className="relative w-full font-['Segoe_UI',Tahoma,Geneva,Verdana,sans-serif]">
-        <div className="relative flex min-h-[550px] flex-col items-center justify-end bg-[url('/assets/about-hero.jpg')] bg-cover bg-center px-5 py-[60px]">
+        <div className="relative flex min-h-[550px] flex-col justify-end bg-[url('/assets/about-hero.jpg')] bg-cover bg-center py-[60px]">
           <div className="absolute inset-0 bg-[rgba(11,55,39,0.45)]" />
 
-          <div className="relative z-[2] mb-[50px] flex">
-            <span className="h-[70px] w-[70px] rounded-full bg-[#081a14]" />
-            <span className="-ml-3 h-[70px] w-[70px] rounded-full bg-[#206233]" />
-            <span className="-ml-3 h-[70px] w-[70px] rounded-full bg-[#b8ccbc]" />
-          </div>
+          <div className={`${wrapper} relative z-[2] px-6 md:px-10 lg:px-14`}>
+            <div className="mb-[50px] flex justify-center">
+              <span className="h-[70px] w-[70px] rounded-full bg-[#081a14]" />
+              <span className="-ml-3 h-[70px] w-[70px] rounded-full bg-[#206233]" />
+              <span className="-ml-3 h-[70px] w-[70px] rounded-full bg-[#b8ccbc]" />
+            </div>
 
-          <div className="relative z-[2] flex w-full max-w-[1000px] gap-5 max-[800px]:flex-col">
-            <article className="flex-1 rounded-[20px] bg-[#e6fdf6] p-10 text-[#164232] shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-              <img src="/assets/Union-3.svg" alt="Mission" className="h-10 w-10 object-contain" />
-              <h2 className="my-[15px] text-[1.6rem]">Our Mission</h2>
-              <p className="text-[0.95rem] leading-[1.5]">
-                To bridge the gap between millions of unbanked Africans and accessibility of
-                tailored finances to fulfil their dreams of prosperity.
-              </p>
-            </article>
+            <div className="flex w-full gap-5 max-[800px]:flex-col">
+              <article className="flex-1 rounded-[20px] bg-[#e6fdf6] p-10 text-[#164232] shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+                <img src="/assets/Union-3.svg" alt="Mission" className="h-10 w-10 object-contain" />
+                <h2 className="my-[15px] text-[1.6rem]">Our Mission</h2>
+                <p className="text-[0.95rem] leading-[1.5]">
+                  To bridge the gap between millions of unbanked Africans and accessibility of
+                  tailored finances to fulfil their dreams of prosperity.
+                </p>
+              </article>
 
-            <article className="flex-1 rounded-[20px] bg-[#064536] p-10 text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-              <img src="/assets/Union-2.svg" alt="Vision" className="h-10 w-10 object-contain" />
-              <h2 className="my-[15px] text-[1.6rem]">Our Vision</h2>
-              <p className="text-[0.95rem] leading-[1.5]">
-                To become the leading financial services provider in Africa, empowering individuals
-                and businesses to achieve their financial goals and drive economic development
-                across the continent.
-              </p>
-            </article>
+              <article className="flex-1 rounded-[20px] bg-[#064536] p-10 text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
+                <img src="/assets/Union-2.svg" alt="Vision" className="h-10 w-10 object-contain" />
+                <h2 className="my-[15px] text-[1.6rem]">Our Vision</h2>
+                <p className="text-[0.95rem] leading-[1.5]">
+                  To become the leading financial services provider in Africa, empowering
+                  individuals and businesses to achieve their financial goals and drive economic
+                  development across the continent.
+                </p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#123c2f] px-5 py-20 text-center text-white">
-        <div className="mx-auto max-w-[1100px]">
+      <section className="bg-[#123c2f] px-6 py-20 text-center text-white md:px-10 lg:px-14">
+        <div className={wrapper}>
           <h2 className="mb-[10px] text-[2.5rem]">Our Values</h2>
           <p className="mb-[50px] opacity-80">
             Trusted by thousands of riders, vendors, and SMEs across Africa.
@@ -128,10 +132,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#0d2b22] px-[50px] py-[100px] text-white max-lg:px-5 max-lg:py-20">
-        <div className="mx-auto flex max-w-[1200px] items-start justify-between gap-[60px] max-lg:flex-col max-lg:gap-10">
+      <section className="bg-[#0d2b22] px-6 py-[100px] text-white md:px-10 max-lg:py-20 lg:px-14">
+        <div className={`${wrapper} flex items-start justify-between gap-[60px] max-lg:flex-col max-lg:gap-10`}>
           <div className="flex-1">
-            <h2 className="mb-5 text-[84px] leading-[1] font-extrabold max-lg:text-[54px]">
+            <h2 className="mb-5 text-[72px] leading-[1] font-extrabold max-lg:text-[54px] xl:text-[84px]">
               Terms &amp;
               <br />
               Conditions

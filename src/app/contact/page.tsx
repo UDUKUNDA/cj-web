@@ -7,19 +7,22 @@ export const metadata = {
 };
 
 export default function ContactPage() {
+  const wrapper = "mx-auto w-full max-w-[1200px]";
+
   return (
     <div>
-      <section className="bg-[#063b2f] px-[5%] pt-[80px] pb-[150px] text-white">
-        <div className="contacsts-intro mb-[50px] flex flex-wrap items-start justify-between gap-5">
-          <h1 className="m-0 text-[clamp(40px,8vw,64px)] leading-none font-medium">Talk to us</h1>
-          <p className="max-w-[400px] leading-[1.5] opacity-90">
-            If you have questions or need any general information, please complete this form to
-            request the information you need. It will be an honor to help you
-          </p>
-        </div>
+      <section className="bg-[#063b2f] px-6 pt-[80px] pb-[150px] text-white md:px-10 lg:px-14">
+        <div className={wrapper}>
+          <div className="mb-[50px] flex flex-wrap items-start justify-between gap-5">
+            <h1 className="m-0 text-[clamp(40px,8vw,64px)] leading-none font-medium">Talk to us</h1>
+            <p className="max-w-[400px] leading-[1.5] opacity-90">
+              If you have questions or need any general information, please complete this form to
+              request the information you need. It will be an honor to help you
+            </p>
+          </div>
 
-        <div className="relative z-10 mt-10 mx-auto grid max-w-[1200px] overflow-hidden rounded-[24px] bg-white text-[#333] shadow-[0_20px_40px_rgba(0,0,0,0.2)] max-[850px]:grid-cols-1 md:grid-cols-[1fr_1.5fr]">
-          <div className="border-r border-[#eee] p-[clamp(30px,5vw,60px)] max-[850px]:border-r-0 max-[850px]:border-b">
+          <div className="relative z-10 mt-10 grid overflow-hidden rounded-[24px] bg-white text-[#333] shadow-[0_20px_40px_rgba(0,0,0,0.2)] max-[850px]:grid-cols-1 md:grid-cols-[1fr_1.5fr]">
+            <div className="border-r border-[#eee] p-[clamp(30px,5vw,60px)] max-[850px]:border-r-0 max-[850px]:border-b">
             <div className="mb-10 flex gap-[15px]">
               <span className="inline-flex h-[22px] w-[22px] items-center justify-center text-[#8a8a8a]">
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="h-full w-full fill-current">
@@ -98,10 +101,10 @@ export default function ContactPage() {
                 </a>
               </div>
             </div>
-          </div>
+            </div>
 
-          <form className="p-[clamp(30px,5vw,60px)]">
-            <div className="grid grid-cols-2 gap-5 max-[850px]:grid-cols-1">
+            <form className="p-[clamp(30px,5vw,60px)]">
+              <div className="grid grid-cols-2 gap-5 max-[850px]:grid-cols-1">
               <div className="mb-5">
                 <label htmlFor="first-name" className="mb-2 block text-[13px] font-semibold text-[#444]">
                   First Name
@@ -122,55 +125,59 @@ export default function ContactPage() {
                   className="w-full rounded-[8px] border border-[#d1f2e8] bg-[#e9fdf7] px-[15px] py-3 text-[15px] outline-none"
                 />
               </div>
-            </div>
+              </div>
 
-            <div className="mb-5">
-              <label htmlFor="email" className="mb-2 block text-[13px] font-semibold text-[#444]">
-                Email *
-              </label>
-              <input
-                id="email"
-                type="email"
-                required
-                className="w-full rounded-[8px] border border-[#d1f2e8] bg-[#e9fdf7] px-[15px] py-3 text-[15px] outline-none"
-              />
-            </div>
+              <div className="mb-5">
+                <label htmlFor="email" className="mb-2 block text-[13px] font-semibold text-[#444]">
+                  Email *
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  className="w-full rounded-[8px] border border-[#d1f2e8] bg-[#e9fdf7] px-[15px] py-3 text-[15px] outline-none"
+                />
+              </div>
 
-            <div className="mb-5">
-              <label htmlFor="subject" className="mb-2 block text-[13px] font-semibold text-[#444]">
-                Add subject *
-              </label>
-              <input
-                id="subject"
-                type="text"
-                required
-                className="w-full rounded-[8px] border border-[#d1f2e8] bg-[#e9fdf7] px-[15px] py-3 text-[15px] outline-none"
-              />
-            </div>
+              <div className="mb-5">
+                <label
+                  htmlFor="subject"
+                  className="mb-2 block text-[13px] font-semibold text-[#444]"
+                >
+                  Add subject *
+                </label>
+                <input
+                  id="subject"
+                  type="text"
+                  required
+                  className="w-full rounded-[8px] border border-[#d1f2e8] bg-[#e9fdf7] px-[15px] py-3 text-[15px] outline-none"
+                />
+              </div>
 
-            <div className="mb-5">
-              <label htmlFor="message" className="mb-2 block text-[13px] font-semibold text-[#444]">
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows={5}
-                className="w-full rounded-[8px] border border-[#d1f2e8] bg-[#e9fdf7] px-[15px] py-3 text-[15px] outline-none"
-              />
-            </div>
+              <div className="mb-5">
+                <label htmlFor="message" className="mb-2 block text-[13px] font-semibold text-[#444]">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  rows={5}
+                  className="w-full rounded-[8px] border border-[#d1f2e8] bg-[#e9fdf7] px-[15px] py-3 text-[15px] outline-none"
+                />
+              </div>
 
-            <button
-              type="submit"
-              className="float-right inline-flex items-center gap-[10px] rounded-[8px] bg-[#063b2f] px-7 py-[14px] text-[15px] font-semibold text-white transition hover:scale-[1.02]"
-            >
-              Send message <span>➤</span>
-            </button>
-          </form>
+              <button
+                type="submit"
+                className="float-right inline-flex items-center gap-[10px] rounded-[8px] bg-[#063b2f] px-7 py-[14px] text-[15px] font-semibold text-white transition hover:scale-[1.02]"
+              >
+                Send message <span>➤</span>
+              </button>
+            </form>
+          </div>
         </div>
       </section>
 
-      <section className="-mt-[60px] bg-[#e9fdf7] px-[5%] pt-[100px] pb-[50px]">
-        <div className="relative mx-auto h-[450px] max-w-[1200px] overflow-hidden rounded-[20px] border border-[#c8e6de] bg-[#ddeeea]">
+      <section className="-mt-[60px] bg-[#e9fdf7] px-6 pt-[100px] pb-[50px] md:px-10 lg:px-14">
+        <div className={`${wrapper} relative h-[450px] overflow-hidden rounded-[20px] border border-[#c8e6de] bg-[#ddeeea]`}>
           <div className="h-full w-full bg-[url('/assets/contact-map.jpg')] bg-cover bg-center" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[12px] bg-white p-[15px] text-center text-[#333] shadow-[0_5px_15px_rgba(0,0,0,0.1)]">
             <strong>Credit Jambo</strong>
