@@ -1,3 +1,4 @@
+import "@/styles/legacy-service.css";
 import CreateAccountCTA from "@/components/sections/CreateAccountCTA";
 import DownloadBanner from "@/components/sections/DownloadBanner";
 

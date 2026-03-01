@@ -16,7 +16,7 @@ export default function Navbar() {
 
       <nav>
         <a href="/">Home</a>
-        <a href="/about">For business</a>
+        <a href="/about">About Us</a>
         <a href="/services">Services</a>
         <a href="/contact">Contact us</a>
         <a href="#start" className="btn-get-started">

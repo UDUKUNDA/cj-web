@@ -1,3 +1,4 @@
+import "@/styles/legacy-about.css";
 import CreateAccountCTA from "@/components/sections/CreateAccountCTA";
 import DownloadBanner from "@/components/sections/DownloadBanner";
 
@@ -29,10 +30,7 @@ export default function AboutPage() {
       </section>
 
       <section className="riders-mission-vision">
-        <div
-          className="riders-hero-container"
-          style={{ backgroundImage: "url('/assets/about-riders.jpg')" }}
-        >
+        <div className="riders-hero-container">
           <div className="riders-hero-overlay" />
 
           <div className="riders-logo-cluster">
@@ -43,7 +41,9 @@ export default function AboutPage() {
 
           <div className="riders-card-wrap">
             <div className="riders-main-card riders-card-mint">
-              <div className="riders-icon-box">🎯</div>
+              <div className="riders-icon-box">
+                <img src="/assets/Union-3.svg" alt="Mission" className="riders-inline-icon" />
+              </div>
               <h3>Our Mission</h3>
               <p>
                 To bridge the gap between millions of unbanked Africans and accessibility of
@@ -52,7 +52,9 @@ export default function AboutPage() {
             </div>
 
             <div className="riders-main-card riders-card-forest">
-              <div className="riders-icon-box">🧭</div>
+              <div className="riders-icon-box">
+                <img src="/assets/Union-2.svg" alt="Vision" className="riders-inline-icon" />
+              </div>
               <h3>Our Vision</h3>
               <p>
                 To become the leading financial services provider in Africa, empowering individuals
@@ -75,12 +77,16 @@ export default function AboutPage() {
         <div className="riders-grid-container">
           <div className="riders-grid-row">
             <div className="riders-value-card">
-              <div className="riders-value-icon">💡</div>
+              <div className="riders-value-icon">
+                <img src="/assets/Union-33.svg" alt="Innovation" className="riders-inline-icon" />
+              </div>
               <h4>Innovation</h4>
               <p>Lorem ipsum dolor sit amet consectetur. Volutpat ultrices et et</p>
             </div>
             <div className="riders-value-card">
-              <div className="riders-value-icon">🎧</div>
+              <div className="riders-value-icon">
+                <img src="/assets/Union-43.svg" alt="Customer centric" className="riders-inline-icon" />
+              </div>
               <h4>Customer centric</h4>
               <p>facilisis vel morbi ut at faucibus. Convallis arcu quam ac auctor.</p>
             </div>
@@ -88,17 +94,23 @@ export default function AboutPage() {
 
           <div className="riders-grid-row">
             <div className="riders-value-card">
-              <div className="riders-value-icon">🔍</div>
+              <div className="riders-value-icon">
+                <img src="/assets/Union-23.svg" alt="Transparency" className="riders-inline-icon" />
+              </div>
               <h4>Transparency</h4>
               <p>Lorem ipsum dolor sit amet consectetur. Massa amet feugiat vel vulputate integer.</p>
             </div>
             <div className="riders-value-card">
-              <div className="riders-value-icon">⚡</div>
+              <div className="riders-value-icon">
+                <img src="/assets/Union-133.svg" alt="Swift and Flexible" className="riders-inline-icon" />
+              </div>
               <h4>Swift &amp; Flexible</h4>
               <p>Lorem ipsum dolor sit amet consectetur. Consectetur et mauris quis diam. Tellus proin.</p>
             </div>
             <div className="riders-value-card">
-              <div className="riders-value-icon">👥</div>
+              <div className="riders-value-icon">
+                <img src="/assets/Union-1.svg" alt="Community and Teamwork" className="riders-inline-icon" />
+              </div>
               <h4>Community &amp; Teamwork</h4>
               <p>Lorem ipsum dolor sit amet consectetur. Sit vehicula ut bibendum in dolor.</p>
             </div>
