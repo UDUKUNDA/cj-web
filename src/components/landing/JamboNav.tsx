@@ -11,9 +11,9 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "For business", href: "#" },
-  { label: "Services", href: "#" },
-  { label: "Contact us", href: "#" },
+  { label: "For business", href: "/about" },
+  { label: "Services", href: "/Services" },
+  { label: "Contact us", href: "/contact" },
 ];
 
 export function JamboNav() {
