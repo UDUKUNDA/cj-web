@@ -1,4 +1,7 @@
 import { ContactCard } from "@/components/landing/ContactCard";
+import { CreateAccount } from "@/components/landing/CreateAccount";
+import Footer from "@/components/landing/footer";
+import { GetStarted } from "@/components/landing/GetStarted";
 import { JamboNav } from "@/components/landing/JamboNav";
 import { MapSection } from "@/components/landing/MapSection";
 
@@ -47,8 +50,12 @@ export default function AboutPage() {
         {/* Map Section (Using 1200px) */}
         <div className="w-full mt-12">
           <MapSection />
+          <CreateAccount />
         </div>
+        
       </section>
+      <GetStarted />
+      <Footer />
     </main>
   );
 }

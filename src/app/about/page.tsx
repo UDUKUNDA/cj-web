@@ -1,4 +1,8 @@
 "use client";
+import { CreateAccount } from "@/components/landing/CreateAccount";
+import { CreateAccountforbusiness } from "@/components/landing/CreateAccountforbusiness";
+import Footer from "@/components/landing/footer";
+import { GetStarted } from "@/components/landing/GetStarted";
 import { JamboNav } from "@/components/landing/JamboNav";
 import { MoveRight } from "lucide-react";
 
@@ -252,7 +256,11 @@ across the continent
           
         </div>
       </section>
+      <CreateAccountforbusiness />
+      <GetStarted />
+      <Footer />
     </div>
+    
   );
 }
 

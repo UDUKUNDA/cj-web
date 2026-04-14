@@ -1,6 +1,10 @@
 "use client";
+import { CreateAccount } from "@/components/landing/CreateAccount";
 import { DecorIconsserviceSection } from "@/components/landing/DecorIconserviceSection";
+import Footer from "@/components/landing/footer";
 import { JamboNav } from "@/components/landing/JamboNav";
+import { SofDevelopment } from "@/components/landing/SofDevelopment";
+import { SoftwareDeve } from "@/components/landing/SoftwareDev";
 
 export default function ServicesPage() {
   return (
@@ -111,8 +115,28 @@ export default function ServicesPage() {
       {/* Grid Section */}
       <section className="bg-white py-12 md:py-20 px-6">
         <DecorIconsserviceSection />
-        
+       
       </section>
+       <SoftwareDeve />
+       {/* --- UPDATED PART: INTERACTING SECTIONS --- */}
+       {/* Create a relative wrapper that allows content inside to overlap */}
+       <div className="relative w-full">
+           
+           {/* Section 1: The target that will get covered */}
+           <div className="relative z-0">
+               <SofDevelopment />
+           </div>
+
+           {/* Section 2: The source of the overlapping phone */}
+           {/* Positioned absolutely on desktop, regular flex on mobile */}
+           
+               <CreateAccount />
+           
+           
+           {/* Spacer so the flow isn't broken on desktop */}
+           {/* Corresponds to the height of the CreateAccount component on desktop */}
+           <Footer />
+       </div>
     </div>
   );
 }
