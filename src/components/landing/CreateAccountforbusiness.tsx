@@ -2,16 +2,21 @@
 import React from "react";
 
 /**
- * CreateAccount Component
- * Features: #ffffff
- * - Background color: 
- * - Fixed Desktop: 1338.57px x 260.95px
- * - Responsive Mobile: Maintain overlap and centered alignment
+ * CreateAccountforbusiness Component
+ * Fix: Ensure bg-white fills the entire horizontal viewport on all devices
+ * by removing potential layout constraints on the outer section.
  */
 export function CreateAccountforbusiness() {
   return (
-    <section className="w-full relative px-4 md:px-6 flex justify-center py-20 lg:py-0 lg:pb-24 bg-[#ffffff]">
-      <div className="w-full max-w-[1440px] flex justify-center">
+    /* The outer section must be w-full with no horizontal margin 
+       to ensure the background color fills the window edge-to-edge.
+    */
+    <section className="w-full bg-[#ffffff] relative flex justify-center py-20 lg:py-0 lg:pb-24">
+      
+      {/* Horizontal padding is moved here (px-4) so the background color 
+          above remains unaffected, but the content doesn't hit the screen edge.
+      */}
+      <div className="w-full max-w-[1440px] px-4 md:px-6 flex justify-center">
           
         <div 
           className="bg-[#004D40] rounded-[40px] mt-[60px] lg:mt-[150px] relative w-full lg:w-[1338.57px] min-h-[450px] lg:min-h-[200px] lg:h-[260.95px] flex items-center z-10"
@@ -21,8 +26,6 @@ export function CreateAccountforbusiness() {
           <div className="container mx-auto px-6 md:px-8 lg:px-16 flex flex-col lg:grid lg:grid-cols-2 gap-4 lg:gap-8 relative z-10 py-12 lg:py-0 h-full">
             
             {/* Left Side: Text and Buttons */}
-            {/* Added order-2 on mobile so text is below the image pop-out if desired, or keep order-1 for text first. 
-                I kept text first (order-1) but added padding-top to mobile to prevent image collision. */}
             <div className="flex flex-col justify-center text-center lg:text-left order-2 lg:order-1 mt-8 lg:mt-0">
               <h2 className="text-white font-inter font-bold text-[clamp(28px,3vw,36px)] leading-tight mb-3">
                 Create account
@@ -54,7 +57,6 @@ export function CreateAccountforbusiness() {
                   height: "auto"
                 }}
               >
-                {/* CSS Variable for responsive width without touching desktop clamp */}
                 <style jsx>{`
                   div { --img-width: 280px; }
                   @media (min-width: 1024px) {
