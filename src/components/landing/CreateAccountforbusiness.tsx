@@ -33,7 +33,7 @@ export function CreateAccountforbusiness({ embedded = false }: CreateAccountforb
     : "min-w-0 relative flex justify-center lg:justify-end items-end order-1 lg:order-2 overflow-visible h-[150px] lg:h-full";
 
   const phoneImageClassName = embedded
-    ? "w-[var(--img-width)] max-h-[calc(100%+20px)] object-contain drop-shadow-2xl"
+    ? "block w-[var(--img-width)] max-h-[calc(100%+20px)] translate-y-2 object-contain drop-shadow-2xl"
     : "w-[var(--img-width)] max-h-full object-contain drop-shadow-2xl";
 
   const gridClassName = embedded
