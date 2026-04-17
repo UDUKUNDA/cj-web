@@ -6,9 +6,9 @@ export function LoanOptionsSection() {
       <div className="grid min-h-0 flex-1 grid-cols-[calc(100%/6)_calc(5*100%/6)]">
         <div className="flex h-full flex-col bg-white">
           <div className="grid w-full flex-1 grid-rows-5">
-            <div className="flex items-center justify-center bg-[#E6FFFB]">
-              <div className="flex items-center justify-center rounded-[12px] border border-[#77C7BC]/40 bg-[#F5FFFD] h-[clamp(26px,3vw,40px)] w-[clamp(26px,3vw,40px)]">
-                <img src="/assets/cashme.svg" alt="" className="h-[70%] w-[70%] object-contain" />
+            <div className="flex items-center justify-start bg-[#E6FFFB] pl-3">
+              <div className="flex items-center justify-center h-[clamp(34px,4.2vw,56px)] w-[clamp(34px,4.2vw,56px)]">
+                <img src="/assets/cashme.svg" alt="" className="h-[78%] w-[78%] object-contain" />
               </div>
             </div>
 

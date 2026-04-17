@@ -21,8 +21,9 @@ export function JamboNav() {
 
   return (
     <header className="relative bg-[#01382F] w-full">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(4,234,108,0)_0%,rgba(4,234,108,0.95)_18%,rgba(130,251,142,1)_50%,rgba(4,234,108,0.95)_82%,rgba(4,234,108,0)_100%)]" />
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <Link href="/" className="block flex-shrink-0">
             <img 
