@@ -29,7 +29,7 @@ export function CreateAccountforbusiness({ embedded = false }: CreateAccountforb
     : "phoneWrap absolute lg:top-[-110px] xl:top-[-140px] lg:right-0 top-[-100px] flex justify-center items-center";
 
   const phoneColumnClassName = embedded
-    ? "min-w-0 relative flex justify-center lg:justify-end items-end order-1 lg:order-2 overflow-visible h-[150px] lg:h-full"
+    ? "hidden lg:flex min-w-0 relative justify-end items-end order-2 overflow-visible h-full"
     : "min-w-0 relative flex justify-center lg:justify-end items-end order-1 lg:order-2 overflow-visible h-[150px] lg:h-full";
 
   const phoneImageClassName = embedded

@@ -1,7 +1,7 @@
 export function DecorIconsSection() {
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-16 sm:py-20">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 pt-16 sm:pt-20 pb-0">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
           <div className="w-full max-w-[520px]">
             <h2 className="text-[clamp(34px,3.8vw,56px)] font-normal leading-[1.08] text-black">
@@ -18,48 +18,29 @@ export function DecorIconsSection() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[760px] aspect-[760/560] overflow-hidden">
+          <div className="relative mx-auto w-full max-w-[760px] h-[clamp(420px,55vw,640px)] overflow-visible">
             <img
               src="/assets/phone-group.png"
               alt=""
-              className="absolute left-1/2 top-1/2 w-[clamp(260px,40vw,470px)] -translate-x-1/2 -translate-y-1/2 select-none"
+              className="absolute left-1/2 bottom-0 h-[86%] w-auto max-w-[clamp(280px,46vw,560px)] -translate-x-1/2 select-none"
             />
             <img
               src="/assets/confeti.png"
               alt=""
-              className="pointer-events-none absolute left-1/2 top-[6%] w-[clamp(260px,42vw,520px)] -translate-x-1/2 select-none"
+              className="pointer-events-none absolute left-1/2 top-[12%] w-[clamp(260px,42vw,520px)] -translate-x-1/2 select-none"
             />
 
-            <img
-              src="/assets/Vector-34.svg"
-              alt=""
-              className="pointer-events-none absolute select-none"
-              style={{ left: "58%", top: "18%", width: "clamp(32px, 4.2vw, 70px)" }}
-            />
-            <img
-              src="/assets/Union-133.svg"
-              alt=""
-              className="pointer-events-none absolute select-none"
-              style={{ left: "86%", top: "14%", width: "clamp(38px, 5vw, 86px)" }}
-            />
-            <img
-              src="/assets/Union-3ee.svg"
-              alt=""
-              className="pointer-events-none absolute select-none"
-              style={{ left: "55%", top: "68%", width: "clamp(40px, 5vw, 86px)" }}
-            />
-            <img
-              src="/assets/Union-23.svg"
-              alt=""
-              className="pointer-events-none absolute select-none"
-              style={{ left: "16%", top: "55%", width: "clamp(38px, 4.6vw, 78px)" }}
-            />
-            <img
-              src="/assets/Union-43.svg"
-              alt=""
-              className="pointer-events-none absolute select-none"
-              style={{ left: "84%", top: "70%", width: "clamp(40px, 5vw, 88px)" }}
-            />
+            <div className="pointer-events-none absolute left-0 top-[28%] bottom-[6%] hidden flex-col items-center justify-between pl-2 sm:flex">
+              <img src="/assets/Union-33.svg" alt="" className="select-none" style={{ width: "clamp(32px, 4.2vw, 70px)" }} />
+              <img src="/assets/Union-23.svg" alt="" className="select-none" style={{ width: "clamp(38px, 4.6vw, 78px)" }} />
+              <img src="/assets/Union-3ee.svg" alt="" className="select-none" style={{ width: "clamp(40px, 5vw, 86px)" }} />
+            </div>
+
+            <div className="pointer-events-none absolute right-0 top-[28%] bottom-[6%] hidden flex-col items-center justify-between pr-2 sm:flex">
+              <img src="/assets/Union-43.svg" alt="" className="select-none" style={{ width: "clamp(40px, 5vw, 88px)" }} />
+              <img src="/assets/Vector-34.svg" alt="" className="select-none" style={{ width: "clamp(32px, 4.2vw, 70px)" }} />
+              <img src="/assets/Union-133.svg" alt="" className="select-none" style={{ width: "clamp(38px, 5vw, 86px)" }} />
+            </div>
           </div>
         </div>
       </div>

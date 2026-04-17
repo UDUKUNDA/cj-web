@@ -15,7 +15,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-[#004D40] snap-y snap-mandatory md:snap-none">
       <JamboNav />
       <HeroSection />
-       
+      <PaymentPlanSection />
       <DecorIconsSection />
       <LoanOptionsSection />
        <WhatNeeded />
