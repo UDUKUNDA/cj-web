@@ -35,7 +35,7 @@ export function MobileMenuOverlay({ open, items, onClose }: Props) {
   return (
     <div
       className={[
-        "fixed inset-0 z-50 md:hidden",
+        "fixed left-0 top-0 z-[60] h-[100dvh] w-[100vw] md:hidden",
         open ? "pointer-events-auto" : "pointer-events-none",
       ].join(" ")}
       aria-hidden={!open}
@@ -43,8 +43,7 @@ export function MobileMenuOverlay({ open, items, onClose }: Props) {
       <div
         className={[
           "absolute inset-0",
-          "bg-[radial-gradient(60%_60%_at_50%_0%,rgba(130,251,142,0.20)_0%,rgba(0,0,0,0)_70%),linear-gradient(180deg,rgba(0,77,64,0.35)_0%,rgba(0,37,31,0.92)_70%)]",
-          "backdrop-blur-xl",
+          "bg-[radial-gradient(60%_60%_at_50%_0%,rgba(130,251,142,0.16)_0%,rgba(0,77,64,1)_55%),linear-gradient(180deg,rgba(0,77,64,1)_0%,rgba(0,37,31,1)_85%)]",
           open ? "opacity-100" : "opacity-0",
           "transition-opacity duration-200",
         ].join(" ")}
