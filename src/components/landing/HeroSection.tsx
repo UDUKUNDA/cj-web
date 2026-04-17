@@ -1,4 +1,4 @@
- import Link from "next/link";
+import Link from "next/link";
 import { HeroIllustration } from "@/components/landing/HeroIllustration";
 import { StepCard } from "@/components/landing/StepCard";
 
@@ -14,29 +14,31 @@ export function HeroSection() {
         <div className="snap-start flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center gap-8 lg:min-h-0 lg:flex-row lg:items-center lg:justify-between lg:gap-12 xl:gap-16">
           {/* Left Column - Text Content */}
           <div className="w-full text-left lg:flex-1 lg:text-left">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[67.763px] font-extrabold leading-[1.06] tracking-[-0.02em] text-white mb-4 sm:mb-6">
-              <div>Small Loans.</div>
-              <div>Big Impact.</div>
-              <div>
-                Real{" "}
-                <span className="relative inline-block">
-                  Growth.
-                  <img
-                    src="/assets/highlight.svg"
-                    alt=""
-                    className="pointer-events-none absolute -bottom-5 left-1/2 w-[115%] -translate-x-1/2 select-none"
-                  />
-                </span>
-              </div>
-            </h1>
+            <div className="translate-y-4 sm:translate-y-6 lg:translate-y-8">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[67.763px] font-extrabold leading-[1.06] tracking-[-0.02em] text-white mb-4 sm:mb-6">
+                <div>Small Loans.</div>
+                <div>Big Impact.</div>
+                <div>
+                  Real{" "}
+                  <span className="relative inline-block">
+                    Growth.
+                    <img
+                      src="/assets/highlight.svg"
+                      alt=""
+                      className="pointer-events-none absolute -bottom-5 left-1/2 w-[115%] -translate-x-1/2 select-none"
+                    />
+                  </span>
+                </div>
+              </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 max-w-lg mx-auto text-left lg:mx-0 lg:text-left">
-              Fast, affordable, and flexible micro-loans tailored to your needs.
-            </p>
+              <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 max-w-lg mx-auto text-left lg:mx-0 lg:text-left">
+                Fast, affordable, and flexible micro-loans tailored to your needs.
+              </p>
+            </div>
 
             <Link
               href="/"
-              className="inline-flex items-center justify-center px-8 sm:px-10 py-3 sm:py-4 rounded-full border border-[#04EA6C] bg-[#82FB8E] text-black font-medium text-base sm:text-lg hover:bg-[#6CFF7B] transition-colors duration-200"
+              className="inline-flex items-center justify-center px-6 sm:px-7 py-2.5 sm:py-3 rounded-full border border-[#04EA6C] bg-[#82FB8E] text-black font-medium text-sm sm:text-base hover:bg-[#6CFF7B] transition-colors duration-200"
             >
               Get started
             </Link>
