@@ -38,49 +38,26 @@ export default function BusinessPage() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="w-full relative pb-12 lg:pb-24 overflow-visible min-h-[500px] lg:min-h-[1100px]">
+      <section className="w-full relative pb-12 lg:pb-24 overflow-hidden">
         
-        {/* Background Image Container - Now edge-to-edge on mobile */}
-        <div 
-          className="relative lg:absolute z-0 flex items-center justify-center overflow-hidden transition-all duration-500"
-          style={{
-            width: "var(--bg-width, 100%)",
-            height: "var(--bg-height, 300px)",
-            top: "var(--bg-top, 0px)",
-            left: "var(--bg-left, 0px)",
-          }}
-        >
-          <style jsx>{`
-            div { 
-              --bg-width: 100vw; 
-              --bg-height: 300px; 
-              --bg-top: 0px; 
-              --bg-left: 0px; 
-            }
-            @media (min-width: 1024px) {
-              div { 
-                --bg-width: 1875.90px; 
-                --bg-height: 889.60px; 
-                --bg-top: 10px; 
-                --bg-left: -30.87px; 
-              }
-            }
-          `}</style>
-          
-          <img 
-            src="/assets/Maskgroup.svg" 
-            alt="Team" 
-            className="w-full h-full object-cover lg:rounded-[25px]" 
-          />
-          <div className="absolute inset-0 bg-black/15 lg:rounded-[25px]" />
+        {/* Background Image Container */}
+        <div className="w-full  flex justify-center px-3">
+          <div className="relative w-full max-w-[2990px] h-[700px] md:h-[900px] lg:h-[700px] overflow-hidden rounded-[12px]">
+            <img 
+              src="/assets/Maskgroup.svg" 
+              alt="Team" 
+              className="w-full h-full object-cover" 
+            />
+            <div className="absolute inset-0 bg-black/15" />
+          </div>
         </div>
 
-        {/* Cards Container - Side-by-Side on Mobile */}
-        <div className="max-w-[1440px] mx-auto px-4 relative z-20 -mt-20 lg:mt-0">
-          <div className="flex flex-row gap-2 md:gap-5 items-stretch lg:pt-[48rem] justify-center">
+        {/* Cards Container */}
+        <div className="max-w-[1440px] mx-auto px-4 relative z-20 -mt-16 md:-mt-32 lg:-mt-48">
+          <div className="flex flex-row gap-2 md:gap-5 items-stretch justify-center">
             
             {/* Our Mission Card */}
-            <div className="flex flex-col items-start gap-4 md:gap-8 p-4 md:p-12 shadow-2xl bg-[#E6FFFB] w-1/2 max-w-[659px] rounded-[15px] md:rounded-[19px] border border-black/5">
+            <div className="flex flex-col items-start gap-4 md:gap-8 p-4 md:p-12 shadow-2xl bg-[#E6FFFB] w-1/2 max-w-[600px] rounded-[15px] md:rounded-[24px] border border-black/5">
               <div className="w-10 h-10 md:w-16 md:h-16 bg-white rounded-full flex items-center justify-center shadow-md shrink-0">
                 <img src="/assets/ssaffaa.svg" alt="Mission" className="w-5 h-5 md:w-8 md:h-8 object-contain" />
               </div>
@@ -93,16 +70,14 @@ export default function BusinessPage() {
             </div>
 
             {/* Our Vision Card */}
-            <div className="flex flex-col items-start gap-4 md:gap-8 p-4 md:p-12 shadow-2xl bg-[#004D40] w-1/2 max-w-[659px] rounded-[15px] md:rounded-[18px]">
+            <div className="flex flex-col items-start gap-4 md:gap-8 p-4 md:p-12 shadow-2xl bg-[#004D40] w-1/2 max-w-[600px] rounded-[15px] md:rounded-[24px]">
               <div className="w-10 h-10 md:w-16 md:h-16 bg-[#12CFA7] rounded-full flex items-center justify-center shadow-md shrink-0">
                 <img src="/assets/fgshshs.svg" alt="Vision" className="w-5 h-5 md:w-8 md:h-8 object-contain" />
               </div>
               <div className="space-y-1 md:space-y-4">
                 <h3 className="text-sm md:text-2xl font-bold text-white">Our Vision</h3>
                 <p className="text-gray-100 text-[10px] md:text-base font-medium leading-tight md:leading-relaxed">
-                  To become the leading financial services provider in Africa, 
-empowering individuals and businesses to achieve their financial goals and drive economic development 
-across the continent
+                  To become the leading financial services provider in Africa, empowering individuals and businesses to achieve their financial goals.
                 </p>
               </div>
             </div>
@@ -110,7 +85,6 @@ across the continent
           </div>
         </div>
       </section>
-
       {/* Our Values Section */}
       {/* Our Values Section */}
       <section className="w-full py-16 md:py-24 px-6 bg-[#003F35] flex flex-col items-center">
