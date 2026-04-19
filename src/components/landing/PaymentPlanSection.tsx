@@ -23,19 +23,39 @@ export function PaymentPlanSection() {
                   <img src="/assets/calendar-1.svg" alt="" className="h-[clamp(38px,4.1vw,54.87px)] w-[clamp(35px,3.8vw,50.65px)]" />
                 </div>
                 <div className="flex flex-1 flex-col" style={{ gap: "clamp(4px, 0.6vw, 6.2906px)" }}>
-                  <div className="text-[clamp(14px,1.9vw,21.3318px)] font-bold leading-[clamp(18px,2.2vw,25.83px)] tracking-[-0.01em] text-black">
+                  <div 
+                    className="text-black font-inter font-bold"
+                    style={{
+                      width: "min(100%, 336.48px)",
+                      height: "26px",
+                      opacity: 1,
+                      fontSize: "clamp(16px, 1.9vw, 21.33px)",
+                      lineHeight: "100%",
+                      letterSpacing: "0em"
+                    }}
+                  >
                     Daily Payment
                   </div>
-                  <div className="text-[clamp(10px,1.25vw,14.3785px)] font-normal leading-[clamp(14px,1.85vw,21.57px)] tracking-[0.01em] text-[#636363]">
-                    Make small, manageable payments every day to stay on track without affecting your cash flow. Perfect for riders with daily
-                    income.
+                  <div 
+                    className="text-[#636363] font-inter font-normal"
+                    style={{
+                      width: "min(100%, 377.60px)",
+                      height: "auto",
+                      minHeight: "65px",
+                      opacity: 1,
+                      fontSize: "clamp(12px, 1.25vw, 14.38px)",
+                      lineHeight: "21.57px",
+                      letterSpacing: "0em"
+                    }}
+                  >
+                    Make small, manageable payments every day to stay on track without affecting your cash flow. Perfect for riders with daily income.
                   </div>
                 </div>
               </div>
             </div>
 
             <div
-              className="absolute left-0 flex flex-col rounded-[21px] border-[3.87px] border-[#38A8A1] bg-white"
+              className="absolute left-0 z-10 flex flex-col rounded-[21px] border-[3.87px] border-[#38A8A1] bg-white shadow-lg"
               style={{
                 top: "32.28%",
                 width: "100%",
@@ -53,10 +73,31 @@ export function PaymentPlanSection() {
                     <img src="/assets/calendar-3.svg" alt="" className="h-[clamp(40px,4.1vw,56.08px)] w-[clamp(37px,3.8vw,51.76px)]" />
                   </div>
                   <div className="flex flex-1 flex-col" style={{ gap: "clamp(5px, 0.8vw, 7px)" }}>
-                    <div className="text-[clamp(15px,2.05vw,23.7375px)] font-bold leading-[clamp(19px,2.5vw,28.73px)] tracking-[-0.01em] text-black">
+                    <div 
+                      className="text-black font-inter font-bold"
+                      style={{
+                        width: "min(100%, 374.43px)",
+                        height: "29px",
+                        opacity: 1,
+                        fontSize: "clamp(18px, 2.2vw, 23.74px)",
+                        lineHeight: "100%",
+                        letterSpacing: "0em"
+                      }}
+                    >
                       Monthly Payment
                     </div>
-                    <div className="text-[clamp(11px,1.45vw,16px)] font-normal leading-[clamp(15px,2vw,24px)] tracking-[0.01em] text-[#636363]">
+                    <div 
+                      className="text-[#636363] font-inter font-normal"
+                      style={{
+                        width: "min(100%, 374.43px)",
+                        height: "auto",
+                        minHeight: "48px",
+                        opacity: 1,
+                        fontSize: "clamp(12px, 1.45vw, 16px)",
+                        lineHeight: "24px",
+                        letterSpacing: "0em"
+                      }}
+                    >
                       A simple plan that lets you spread your repayments across the month without stress.
                     </div>
                   </div>
@@ -84,10 +125,31 @@ export function PaymentPlanSection() {
                   <img src="/assets/calendar-2.svg" alt="" className="h-[clamp(38px,4.1vw,54.87px)] w-[clamp(35px,3.8vw,50.65px)]" />
                 </div>
                 <div className="flex flex-1 flex-col" style={{ gap: "clamp(4px, 0.6vw, 6.2906px)" }}>
-                  <div className="text-[clamp(14px,1.9vw,21.3318px)] font-bold leading-[clamp(18px,2.2vw,25.83px)] tracking-[-0.01em] text-black">
+                  <div 
+                    className="text-black font-inter font-bold"
+                    style={{
+                      width: "min(100%, 336.48px)",
+                      height: "26px",
+                      opacity: 1,
+                      fontSize: "clamp(16px, 1.9vw, 21.33px)",
+                      lineHeight: "100%",
+                      letterSpacing: "0em"
+                    }}
+                  >
                     Weekly Payment
                   </div>
-                  <div className="text-[clamp(10px,1.25vw,14.3785px)] font-normal leading-[clamp(14px,1.85vw,21.57px)] tracking-[0.01em] text-[#636363]">
+                  <div 
+                    className="text-[#636363] font-inter font-normal"
+                    style={{
+                      width: "min(100%, 336.48px)",
+                      height: "auto",
+                      minHeight: "44px",
+                      opacity: 1,
+                      fontSize: "clamp(12px, 1.25vw, 14.38px)",
+                      lineHeight: "21.57px",
+                      letterSpacing: "0em"
+                    }}
+                  >
                     Perfect for small businesses who prefer smaller, more frequent repayment cycles.
                   </div>
                 </div>
@@ -96,10 +158,32 @@ export function PaymentPlanSection() {
           </div>
 
           <div className="flex w-full max-w-[490.43px] flex-col gap-[34px]">
-            <div className="text-[clamp(30px,3.6vw,48.3718px)] font-normal leading-[clamp(38px,4.3vw,58.56px)] tracking-[-0.02em] text-black">
+            <div 
+              className="text-[#000000] font-inter font-normal"
+              style={{
+                width: "min(100%, 490.43px)",
+                height: "auto",
+                minHeight: "118px",
+                opacity: 1,
+                fontSize: "clamp(30px, 3.6vw, 48.37px)",
+                lineHeight: "100%",
+                letterSpacing: "0em"
+              }}
+            >
               Choose the payment plan that suits you
             </div>
-            <div className="text-[clamp(14px,1.4vw,18px)] font-normal leading-[clamp(22px,2.2vw,28px)] tracking-[0.01em] text-black/80">
+            <div 
+              className="text-black/80 font-inter font-normal"
+              style={{
+                width: "min(100%, 490.43px)",
+                height: "auto",
+                minHeight: "140px",
+                opacity: 1,
+                fontSize: "18px",
+                lineHeight: "28px",
+                letterSpacing: "0em"
+              }}
+            >
               Whether you earn daily, weekly, or monthly, Jambo lets you repay your loan in a way that aligns with your hustle.
               <br />
               <br />

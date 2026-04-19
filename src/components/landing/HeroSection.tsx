@@ -17,7 +17,16 @@ export function HeroSection() {
           {/* Left Column - Text Content */}
           <div className="w-full text-center lg:flex-1 lg:text-left">
             <div className="translate-y-4 sm:translate-y-6 lg:translate-y-8">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[67.763px] font-extrabold leading-[1.06] tracking-[-0.02em] text-white mb-4 sm:mb-6">
+              <h1 
+                className="text-white font-inter font-extrabold mb-4 sm:mb-6"
+                style={{
+                  width: "min(100%, 692.54px)",
+                  fontSize: "clamp(40px, 6vw, 67.76px)",
+                  lineHeight: "100%",
+                  letterSpacing: "0em",
+                  opacity: 1
+                }}
+              >
                 <div>Small Loans.</div>
                 <div>Big Impact.</div>
                 <div>
@@ -33,7 +42,16 @@ export function HeroSection() {
                 </div>
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 max-w-lg mx-auto text-center lg:mx-0 lg:text-left">
+              <p 
+                className="text-white/90 font-inter font-normal mb-6 sm:mb-8 mx-auto text-center lg:mx-0 lg:text-left"
+                style={{
+                  width: "min(100%, 406.08px)",
+                  fontSize: "clamp(16px, 2.5vw, 20px)",
+                  lineHeight: "28px",
+                  letterSpacing: "0em",
+                  opacity: 1
+                }}
+              >
                 Fast, affordable, and flexible micro-loans tailored to your needs.
               </p>
             </div>
@@ -57,10 +75,28 @@ export function HeroSection() {
         {/* Steps Section */}
         <div className="snap-start mt-16 flex min-h-[calc(100svh-4rem)] flex-col justify-center sm:mt-20 lg:min-h-0 lg:mt-24">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-medium leading-[1.06] tracking-[-0.015em] text-white text-left">
+            <h2 
+              className="font-inter font-medium text-left"
+              style={{
+                width: "min(100%, 522px)",
+                fontSize: "clamp(24px, 3.5vw, 36px)",
+                lineHeight: "40px",
+                letterSpacing: "0em",
+                color: "#FFFFFF",
+                opacity: 1
+              }}
+            >
               Simple Steps to Get Your Loan
             </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-white/85 leading-relaxed tracking-[0.01em] text-left sm:text-justify max-w-md">
+            <p 
+              className="font-inter font-normal text-left sm:text-justify max-w-md"
+              style={{
+                fontSize: "20px",
+                lineHeight: "28px",
+                letterSpacing: "0em",
+                color: "#FFFFFF"
+              }}
+            >
               Our loan process is fast and reliable you can get your loan in as little as 24 hours.
             </p>
           </div>

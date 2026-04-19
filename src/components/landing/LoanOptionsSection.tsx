@@ -28,10 +28,10 @@ export function LoanOptionsSection() {
                       : "bg-white"
                 } px-3`}
               >
-                <div className="text-[#004D40] font-medium tracking-[-0.01em]" style={{ fontSize: "clamp(10px, 1.2vw, 18px)" }}>
+                <div className="text-[#000000] font-inter font-bold" style={{ fontSize: "18px", lineHeight: "28px", letterSpacing: "0em" }}>
                   {row.title}
                 </div>
-                <div className="text-[#004D40]/80" style={{ fontSize: "clamp(8px, 0.95vw, 12px)", lineHeight: "1.35" }}>
+                <div className="text-[#000000] font-inter font-normal" style={{ fontSize: "14px", lineHeight: "20px", letterSpacing: "0em" }}>
                   {row.desc}
                 </div>
               </div>
@@ -47,8 +47,8 @@ export function LoanOptionsSection() {
             {["Jambo Cash", "Igisubizo", "Kura (LPO)", "Kura+ (Capital)", "ImberePay"].map((label, colIndex) => (
               <div
                 key={label}
-                className={`${colIndex === 0 ? "" : "border-l border-[#77C7BC]"} border-b border-[#77C7BC] flex items-center justify-center px-2 text-center font-medium tracking-[-0.01em] text-black`}
-                style={{ fontSize: "clamp(10px, 1.2vw, 18px)", lineHeight: "1.15" }}
+                className={`${colIndex === 0 ? "" : "border-l border-[#77C7BC]"} border-b border-[#77C7BC] flex items-center justify-center px-2 text-center font-inter font-bold text-black`}
+                style={{ fontSize: "24px", lineHeight: "32px", letterSpacing: "0em" }}
               >
                 {label}
               </div>
@@ -64,24 +64,46 @@ export function LoanOptionsSection() {
                 const isLastRow = rowIndex === 3;
                 const borderLeft = colIndex === 0 ? "" : "border-l border-[#77C7BC]";
                 const borderBottom = isLastRow ? "" : "border-b border-[#77C7BC]";
-                const textColor = rowIndex === 0 ? "text-[#1D5E5A]" : "text-black";
+                const isFirstRow = rowIndex === 0;
+                const isSecondRow = rowIndex === 1;
+                const isThirdRow = rowIndex === 2;
+                const isFourthRow = rowIndex === 3;
+                const textColor = (isFirstRow || isSecondRow || isThirdRow || isFourthRow) ? "text-[#1D5E5A] font-inter font-bold" : "text-black";
                 const bgColor = rowIndex === 0 || rowIndex === 2 ? "bg-[rgb(206,253,211)]" : "bg-white";
+                
+                let customStyle = {};
+                if (isFirstRow || isSecondRow || isThirdRow) {
+                  customStyle = { fontSize: "24px", lineHeight: "32px", letterSpacing: "0em", width: (isSecondRow || isThirdRow) ? "100%" : "auto", height: (isSecondRow || isThirdRow) ? "32px" : "auto", opacity: 1 };
+                } else if (isFourthRow) {
+                  customStyle = { fontSize: "18px", lineHeight: "28px", letterSpacing: "0em", width: "100%", height: "auto", opacity: 1 };
+                } else {
+                  customStyle = { fontSize: "clamp(10px, 1.15vw, 18px)", lineHeight: "1.2" };
+                }
+
+                let content: React.ReactNode = value;
+                if (isFirstRow && typeof value === "string" && value.startsWith("RWF ")) {
+                  content = (
+                    <>
+                      <span className="font-normal text-[18px] mr-1">RWF</span>
+                      {value.replace("RWF ", "")}
+                    </>
+                  );
+                }
 
                 return (
                   <div
                     key={`${rowIndex}-${colIndex}`}
                     className={`${borderLeft} ${borderBottom} ${bgColor} flex items-center justify-center px-2 py-2 text-center whitespace-pre-line ${textColor}`}
-                    style={{ fontSize: "clamp(10px, 1.15vw, 18px)", lineHeight: "1.2" }}
                   >
-                    {value}
+                    <div style={customStyle}>{content}</div>
                   </div>
                 );
               }),
             )}
           </div>
           <div
-            className="border-t border-[#77C7BC] bg-[#E6FFFB] px-3 py-2 text-center text-[#004D40]"
-            style={{ fontSize: "clamp(10px, 0.95vw, 14px)", lineHeight: "1.35" }}
+            className="border-t border-[#77C7BC] bg-[#E6FFFB] px-3 py-2 text-center font-inter font-normal text-[#004D40]"
+            style={{ fontSize: "16px", lineHeight: "24px", letterSpacing: "0em" }}
           >
             * We are currently focusing on bodaboda riders (motari) for our base Jambo Cash product only.
           </div>
@@ -95,10 +117,10 @@ export function LoanOptionsSection() {
       <div className="mx-auto w-full max-w-[1512px]">
         <div className="lg:hidden px-4 py-10">
           <div className="mx-auto max-w-[680px] text-center">
-            <div className="text-black font-medium leading-[1.11] tracking-[-0.015em]" style={{ fontSize: "clamp(22px, 6vw, 32px)" }}>
+            <div className="text-black font-inter font-medium text-center" style={{ fontSize: "36px", lineHeight: "40px", letterSpacing: "0em" }}>
               Credit Jambo offers multiple loan options
             </div>
-            <div className="mt-3 text-black/80 font-normal leading-[1.4] tracking-[0.01em]" style={{ fontSize: "clamp(14px, 4vw, 18px)" }}>
+            <div className="mt-3 text-black/80 font-inter font-normal text-center" style={{ fontSize: "20px", lineHeight: "28px", letterSpacing: "0em" }}>
               Choose the loan type that matches your needs, from covering daily expenses to growing your business.
             </div>
           </div>
@@ -118,13 +140,14 @@ export function LoanOptionsSection() {
           <div className="absolute inset-0 bg-[#E6FFFB]" />
 
           <div
-            className="absolute text-left text-black font-inter font-extrabold leading-[1] tracking-[0]"
+            className="absolute z-10 text-center text-black font-inter font-medium"
             style={{
-              left: "118.34px",
-              top: "250.24px",
-              width: "692.5433959960938px",
-              height: "246px",
-              fontSize: "67.76px",
+              left: "50%",
+              top: "6.04%",
+              width: "min(840px, 72%)",
+              transform: "translateX(-50%)",
+              fontSize: "36px",
+              lineHeight: "40px",
               opacity: 1,
               letterSpacing: "0em",
             }}
@@ -133,12 +156,15 @@ export function LoanOptionsSection() {
           </div>
 
           <div
-            className="absolute text-center text-black/80 font-normal leading-[1.4] tracking-[0.01em]"
+            className="absolute text-center text-black/80 font-inter font-normal"
             style={{
-              left: "28.76%",
-              top: "10.49%",
-              width: "42.55%",
-              fontSize: "clamp(14px, 1.6vw, 20px)",
+              left: "50%",
+              top: "11.45%",
+              width: "min(560px, 58%)",
+              transform: "translateX(-50%)",
+              fontSize: "20px",
+              lineHeight: "28px",
+              letterSpacing: "0em",
             }}
           >
             Choose the loan type that matches your needs, from covering daily expenses to growing your business.

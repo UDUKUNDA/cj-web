@@ -21,7 +21,7 @@ export function JamboNav() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full bg-[#01382F]/90 backdrop-blur-xl">
+      <header className="fixed top-0 left-0 right-0 z-50 w-full bg-[#01382F] backdrop-blur-xl">
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-[linear-gradient(90deg,rgba(4,234,108,0)_0%,rgba(4,234,108,0.95)_18%,rgba(130,251,142,1)_50%,rgba(4,234,108,0.95)_82%,rgba(4,234,108,0)_100%)]" />
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
           <div className="flex items-center justify-between h-14 sm:h-16">
@@ -41,7 +41,14 @@ export function JamboNav() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-white text-sm lg:text-base hover:text-[#82FB8E] transition-colors"
+                  className="text-white hover:text-[#82FB8E] transition-colors font-inter font-normal"
+                  style={{
+                    fontSize: "18px",
+                    lineHeight: "28px",
+                    letterSpacing: "0em",
+                    height: "28px",
+                    opacity: 1
+                  }}
                 >
                   {item.label}
                 </Link>
@@ -82,6 +89,9 @@ export function JamboNav() {
           </div>
         </div>
       </header>
+      
+      {/* Spacer to prevent content from jumping under the fixed navbar */}
+      <div className="h-14 sm:h-16 w-full" aria-hidden="true" />
 
       <MobileMenuOverlay open={mobileMenuOpen} items={navItems} onClose={() => setMobileMenuOpen(false)} />
     </>
