@@ -1,134 +1,196 @@
-import Link from "next/link";
-import { HeroIllustration } from "@/components/landing/HeroIllustration";
-import { StepCard } from "@/components/landing/StepCard";
+ 'use client';
+import Link from 'next/link';
+import { HeroIllustration } from '@/components/landing/HeroIllustration';
+import { StepCard } from '@/components/landing/StepCard';
 
 export function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden">
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#004D40]/0 via-[#004D40]/50 to-[#00251F] pointer-events-none" />
-      <div className="pointer-events-none absolute left-1/2 top-[-140px] h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(130,251,142,0.18)_0%,rgba(4,234,108,0.06)_40%,rgba(0,0,0,0)_72%)] blur-3xl lg:hidden" />
-      <div className="pointer-events-none absolute bottom-[-160px] left-[-160px] h-[480px] w-[480px] rounded-full bg-[radial-gradient(circle,rgba(4,234,108,0.14)_0%,rgba(0,77,64,0.06)_35%,rgba(0,0,0,0)_72%)] blur-3xl lg:hidden" />
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#004D40]/0 via-[#004D40]/40 to-[#00251F] pointer-events-none animate-gradient-shift" />
 
-      {/* Content Container */}
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 lg:py-16">
-        {/* Hero Content */}
-        <div className="snap-start flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center gap-8 lg:min-h-0 lg:flex-row lg:items-center lg:justify-between lg:gap-12 xl:gap-16">
-          {/* Left Column - Text Content */}
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-6 sm:py-12 lg:py-16">
+        {/* Hero Viewport - full screen on mobile */}
+        <div className="hero-viewport flex flex-col items-center gap-6 lg:min-h-0 lg:flex-row lg:items-center lg:justify-between lg:gap-12 xl:gap-16">
+          
+          {/* Left Column - Text */}
           <div className="w-full text-center lg:flex-1 lg:text-left">
-            <div className="translate-y-4 sm:translate-y-6 lg:translate-y-8">
-              <h1 
-                className="text-white font-inter font-extrabold mb-4 sm:mb-6"
-                style={{
-                  width: "min(100%, 692.54px)",
-                  fontSize: "clamp(40px, 6vw, 67.76px)",
-                  lineHeight: "100%",
-                  letterSpacing: "0em",
-                  opacity: 1
-                }}
-              >
-                <div>Small Loans.</div>
-                <div>Big Impact.</div>
-                <div>
-                  Real{" "}
-                  <span className="relative inline-block">
-                    Growth.
-                    <img
-                      src="/assets/highlight.svg"
-                      alt=""
-                      className="pointer-events-none absolute -bottom-5 left-1/2 w-[115%] -translate-x-1/2 select-none"
-                    />
-                  </span>
-                </div>
-              </h1>
+            <h1
+              className="text-white font-inter font-extrabold mb-4 sm:mb-6 animate-fade-up"
+              style={{
+                width: 'min(100%, 692.54px)',
+                fontSize: 'clamp(40px, 6vw, 67.76px)',
+                lineHeight: '100%',
+                letterSpacing: '0em',
+              }}
+            >
+              <div>Small Loans.</div>
+              <div>Big Impact.</div>
+              <div>
+                Real{' '}
+                <span className="relative inline-block group">
+                  Growth.
+                  <img
+                    src="/assets/highlight.svg"
+                    alt=""
+                    className="pointer-events-none absolute -bottom-5 left-1/2 w-[115%] -translate-x-1/2 select-none transition-transform duration-300 group-hover:scale-105"
+                  />
+                </span>
+              </div>
+            </h1>
 
-              <p 
-                className="text-white/90 font-inter font-normal mb-6 sm:mb-8 mx-auto text-center lg:mx-0 lg:text-left"
-                style={{
-                  width: "min(100%, 406.08px)",
-                  fontSize: "clamp(16px, 2.5vw, 20px)",
-                  lineHeight: "28px",
-                  letterSpacing: "0em",
-                  opacity: 1
-                }}
-              >
-                Fast, affordable, and flexible micro-loans tailored to your needs.
-              </p>
-            </div>
+            <p
+              className="text-white/90 font-inter font-normal mb-6 sm:mb-8 mx-auto lg:mx-0 text-center lg:text-left animate-fade-up animation-delay-100"
+              style={{
+                maxWidth: 'min(100%, 406.08px)',
+                fontSize: 'clamp(16px, 2.5vw, 20px)',
+                lineHeight: '28px',
+              }}
+            >
+              Fast, affordable, and flexible micro-loans tailored to your needs.
+            </p>
 
             <Link
               href="/"
-              className="inline-flex items-center justify-center px-6 sm:px-7 py-2.5 sm:py-3 rounded-full border border-[#04EA6C] bg-[#82FB8E] text-black font-medium text-sm sm:text-base shadow-[0_0_32px_rgba(130,251,142,0.22)] hover:bg-[#6CFF7B] transition-colors duration-200"
+              className="inline-flex items-center justify-center px-6 sm:px-7 py-2.5 sm:py-3 rounded-full border border-[#04EA6C] bg-[#82FB8E] text-black font-medium text-sm sm:text-base shadow-[0_0_32px_rgba(130,251,142,0.22)] hover:bg-[#6CFF7B] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_48px_rgba(130,251,142,0.35)] active:scale-95 animate-fade-up animation-delay-200"
             >
               Get started
             </Link>
           </div>
 
-          {/* Right Column - Illustration (hidden on small screens) */}
-          <div className="hero-illustration w-full mt-8 lg:mt-0 lg:w-1/2">
-            <div className="max-w-md mx-auto lg:max-w-full">
-              <HeroIllustration />
+          {/* Right Column - Illustration */}
+          <div className="hero-illustration w-full mt-6 lg:mt-0 lg:w-1/2 animate-fade-up animation-delay-150">
+            <div className="relative max-w-lg mx-auto lg:max-w-full">
+              <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(4,234,108,0.12)_0%,rgba(0,77,64,0)_70%)] rounded-full blur-xl" />
+              <div className="relative transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_15px_rgba(130,251,142,0.4)]">
+                <HeroIllustration />
+              </div>
+              <div className="absolute inset-0 rounded-full border border-[#04EA6C]/10 pointer-events-none" />
             </div>
           </div>
         </div>
 
-        {/* Steps Section */}
-        <div className="snap-start mt-16 flex min-h-[calc(100svh-4rem)] flex-col justify-center sm:mt-20 lg:min-h-0 lg:mt-24">
+        {/* Steps Viewport - full screen on mobile */}
+        <div className="steps-viewport mt-12 sm:mt-20 lg:mt-24">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 sm:mb-10">
-            <h2 
-              className="font-inter font-medium text-left"
+            <h2
+              className="font-inter font-medium text-left animate-fade-up"
               style={{
-                width: "min(100%, 522px)",
-                fontSize: "clamp(24px, 3.5vw, 36px)",
-                lineHeight: "40px",
-                letterSpacing: "0em",
-                color: "#FFFFFF",
-                opacity: 1
+                width: 'min(100%, 522px)',
+                fontSize: 'clamp(24px, 3.5vw, 36px)',
+                lineHeight: '40px',
+                color: '#FFFFFF',
               }}
             >
               Simple Steps to Get Your Loan
             </h2>
-            <p 
-              className="font-inter font-normal text-left sm:text-justify max-w-md"
+            <p
+              className="font-inter font-normal text-left sm:text-justify max-w-md animate-fade-up animation-delay-100"
               style={{
-                fontSize: "20px",
-                lineHeight: "28px",
-                letterSpacing: "0em",
-                color: "#FFFFFF"
+                fontSize: 'clamp(16px, 2vw, 20px)',
+                lineHeight: '28px',
+                color: '#FFFFFF',
               }}
             >
-              Our loan process is fast and reliable you can get your loan in as little as 24 hours.
+              Our loan process is fast and reliable — you can get your loan in as little as 24 hours.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 justify-items-center sm:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6 xl:gap-6">
-            <StepCard
-              step="1"
-              title="Loan Request"
-              description="Choose your preferred loan type and submit a request directly from the app."
-              iconSrc="/assets/Frame.svg"
-            />
-            <StepCard
-              step="2"
-              title="Loan Approval"
-              description="Our system reviews your request and quickly determines your eligibility."
-              approvedBadge
-            />
-            <StepCard
-              step="3"
-              title="Loan Disbursement"
-              description="Once approved, your loan is sent instantly to your mobile money account."
-              iconSrc="/assets/Frame-1.svg"
-            />
-            <StepCard
-              step="*"
-              title="Repayment"
-              description="Repay your loan through flexible daily, weekly, or monthly payment options the app."
-              iconSrc="/assets/Frame-2.svg"
-            />
+          <div className="grid grid-cols-1 justify-items-center sm:grid-cols-2 xl:grid-cols-4 gap-5 sm:gap-6">
+            <div className="step-card-wrapper w-full animate-fade-up animation-delay-200 transition-all duration-300 hover:scale-105 hover:z-10">
+              <StepCard step="1" title="Loan Request" description="Choose your preferred loan type and submit a request directly from the app." iconSrc="/assets/Frame.svg" />
+            </div>
+            <div className="step-card-wrapper w-full animate-fade-up animation-delay-300 transition-all duration-300 hover:scale-105 hover:z-10">
+              <StepCard step="2" title="Loan Approval" description="Our system reviews your request and quickly determines your eligibility." approvedBadge />
+            </div>
+            <div className="step-card-wrapper w-full animate-fade-up animation-delay-400 transition-all duration-300 hover:scale-105 hover:z-10">
+              <StepCard step="3" title="Loan Disbursement" description="Once approved, your loan is sent instantly to your mobile money account." iconSrc="/assets/Frame-1.svg" />
+            </div>
+            <div className="step-card-wrapper w-full animate-fade-up animation-delay-500 transition-all duration-300 hover:scale-105 hover:z-10">
+              <StepCard step="*" title="Repayment" description="Repay your loan through flexible daily, weekly, or monthly payment options." iconSrc="/assets/Frame-2.svg" />
+            </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(24px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          100% { background-position: 100% 50%; }
+        }
+        .animate-fade-up {
+          animation: fadeUp 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+          opacity: 0;
+        }
+        .animation-delay-100 { animation-delay: 0.1s; }
+        .animation-delay-150 { animation-delay: 0.15s; }
+        .animation-delay-200 { animation-delay: 0.2s; }
+        .animation-delay-300 { animation-delay: 0.3s; }
+        .animation-delay-400 { animation-delay: 0.4s; }
+        .animation-delay-500 { animation-delay: 0.5s; }
+        .animate-gradient-shift {
+          background-size: 200% 200%;
+          animation: gradientShift 12s ease infinite alternate;
+        }
+        .step-card-wrapper {
+          transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+        .step-card-wrapper:hover {
+          transform: translateY(-6px) scale(1.02);
+        }
+
+        /* ========== MOBILE‑ONLY: content near top, steps as second screen ========== */
+        @media (max-width: 640px) {
+          /* Hero section: full viewport, content starts near top */
+          .hero-viewport {
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;  /* changed from 'center' */
+            gap: 1.5rem;
+            margin: 0;
+            padding-top: 2rem;            /* gives a little breathing room at the very top */
+            padding-bottom: 2rem;
+          }
+          /* Steps section: full viewport, centered vertically */
+          .steps-viewport {
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-top: 0 !important;
+            padding: 2rem 0;
+          }
+          /* Futuristic text enhancements */
+          .hero-viewport h1 {
+            text-shadow: 0 2px 12px rgba(130, 251, 142, 0.15);
+            letter-spacing: -0.01em;
+          }
+          .hero-viewport p {
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+          }
+          .steps-viewport h2 {
+            text-shadow: 0 1px 8px rgba(130, 251, 142, 0.1);
+            letter-spacing: -0.01em;
+          }
+          .steps-viewport p {
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+          }
+          /* Illustration spacing */
+          .hero-illustration {
+            margin-top: 0.5rem !important;
+            margin-bottom: 0.5rem !important;
+          }
+          /* Grid gap adjustment for steps */
+          .steps-viewport .grid {
+            gap: 1.25rem;
+          }
+        }
+      `}</style>
     </section>
   );
 }
