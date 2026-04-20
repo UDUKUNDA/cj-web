@@ -15,11 +15,11 @@ export function DecorIconsserviceSection() {
             </h2>
             
             <div className="mt-8 text-[clamp(14px,1.3vw,18px)] font-normal leading-[1.55] text-black/80 font-inter text-center lg:text-left">
-              <p>Lorem ipsum dolor sit amet consectetur.</p>
-              <p>Urna molestie aenean nisl donec egestas.</p>
+              <p>Fast, flexible, and affordable loans.</p>
+              <p>for individuals and small businesses.</p>
               <br />
-              <p>Lorem ipsum dolor sit amet consectetur. </p>
-              <p>Urna molestie aenean nisl donec egestas.</p>
+              <p>with no collateral. </p>
+              <p>Apply for a loan today.</p>
             </div>
 
             {/* Desktop Button - Hidden on Mobile */}

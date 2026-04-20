@@ -50,7 +50,7 @@ export default function AboutPage() {
         {/* Map Section (Using 1200px) */}
         <div className="w-full mt-12">
           <MapSection />
-          <CreateAccount />
+         
         </div>
         
       </section>

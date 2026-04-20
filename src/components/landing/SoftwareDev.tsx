@@ -51,10 +51,8 @@ export function SoftwareDeve() {
             
             <div className="mt-8 text-[clamp(15px,1.2vw,17px)] font-normal leading-[1.7] text-black/80 font-inter text-center lg:text-left max-w-xl mx-auto lg:mx-0">
               <p>
-                Lorem ipsum dolor sit amet consectetur. Viverra vitae dis tincidunt 
-                varius vulputate ornare quis sed. Imperdiet consequat purus accumsan 
-                pharetra nibh odio viverra senectus at. Id at tincidunt at imperdiet 
-                lectus est fermentum imperdiet. Nulla eget sit leo.
+                Custom, scalable software solutions that help businesses improve efficiency and grow.
+Build your next solution with us.
               </p>
             </div>
 

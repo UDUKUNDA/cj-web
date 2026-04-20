@@ -41,19 +41,21 @@ export default function BusinessPage() {
       <section className="w-full relative pb-12 lg:pb-24 overflow-hidden">
         
         {/* Background Image Container */}
-        <div className="w-full  flex justify-center px-3">
-          <div className="relative w-full max-w-[2990px] h-[700px] md:h-[900px] lg:h-[700px] overflow-hidden rounded-[12px]">
-            <img 
-              src="/assets/Maskgroup.svg" 
-              alt="Team" 
-              className="w-full h-full object-cover" 
-            />
-            <div className="absolute inset-0 bg-black/15" />
-          </div>
-        </div>
+        {/* Background Image Container */}
+<div className="w-full flex justify-center px-3">
+  {/* h-[400px] for mobile, md:h-[600px] for tablets, lg:h-[700px] for desktop */}
+  <div className="relative w-full max-w-[2990px] h-[400px] md:h-[600px] lg:h-[700px] overflow-hidden rounded-[12px]">
+    <img 
+      src="/assets/Maskgroup.svg" 
+      alt="Team" 
+      className="w-full h-full object-cover" 
+    />
+    <div className="absolute inset-0 bg-black/15" />
+  </div>
+</div>
 
         {/* Cards Container */}
-        <div className="max-w-[1440px] mx-auto px-4 relative z-20 -mt-16 md:-mt-32 lg:-mt-48">
+        <div className="max-w-[1440px] mx-auto px-4 relative z-16 -mt-10 md:-mt-32 lg:-mt-48">
           <div className="flex flex-row gap-2 md:gap-5 items-stretch justify-center">
             
             {/* Our Mission Card */}
@@ -230,7 +232,7 @@ export default function BusinessPage() {
           
         </div>
       </section>
-      <CreateAccountforbusiness />
+      
       <GetStarted />
       <Footer />
     </div>
@@ -241,16 +243,35 @@ export default function BusinessPage() {
 // Helper Component for Values
 function ValueCard({ span, title, desc, icon, small }: { span: string, title: string, desc: string, icon?: string, small?: boolean }) {
   return (
-    <div className={`${span} bg-[#003028] p-8 md:p-10 rounded-[32px] flex flex-col items-center text-center space-y-6 border border-white/5 transition-all hover:bg-[#003a31]`}>
-      <div className="text-[#82FB8E] w-12 h-12 md:w-16 md:h-16 flex items-center justify-center">
+    <div className={`${span} group relative overflow-hidden bg-[#003028] p-8 md:p-10 rounded-[32px] flex flex-col items-center text-center space-y-6 border border-white/5 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(130,251,142,0.1)]`}>
+      
+      {/* Lighting Effect Layer */}
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+           style={{
+             background: 'radial-gradient(circle at center, rgba(130,251,142,0.08) 0%, transparent 70%)'
+           }} 
+      />
+
+      {/* Icon with float animation */}
+      <div className="text-[#82FB8E] w-12 h-12 md:w-16 md:h-16 flex items-center justify-center transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:drop-shadow-[0_0_10px_rgba(130,251,142,0.5)]">
         {icon ? (
           <img src={icon} alt={title} className="w-full h-full object-contain" />
         ) : (
           <div className="w-8 h-8 bg-[#82FB8E] rounded-full opacity-20" />
         )}
       </div>
-      <h3 className={`${small ? 'text-xl' : 'text-2xl'} font-bold text-white`}>{title}</h3>
-      <p className="text-gray-400 leading-relaxed text-sm md:text-base">{desc}</p>
+
+      <div className="relative z-10 space-y-4">
+        <h3 className={`${small ? 'text-xl' : 'text-2xl'} font-bold text-white transition-colors duration-300 group-hover:text-[#82FB8E]`}>
+          {title}
+        </h3>
+        <p className="text-gray-400 leading-relaxed text-sm md:text-base transition-colors duration-300 group-hover:text-gray-200">
+          {desc}
+        </p>
+      </div>
+      
+      {/* Subtle bottom border glow */}
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#82FB8E]/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
     </div>
   );
 }

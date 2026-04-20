@@ -35,7 +35,7 @@ export function SofDevelopment() {
           <div className="w-full lg:max-w-[580px] order-1 lg:order-1">
             {/* Header: Specific Inter styling, dark green color, clamp for responsiveness */}
             <h2 className="text-[clamp(34px,3.5vw,52px)] font-extrabold leading-[1.1] text-[#01382F] font-inter text-center lg:text-left tracking-tight">
-              Software Development
+              Financial Management Systems
               <br />
               & Consultancy
             </h2>
@@ -43,10 +43,9 @@ export function SofDevelopment() {
             {/* Description Paragraph with specific leading and text opacity */}
             <div className="mt-8 text-[clamp(15px,1.2vw,17px)] font-normal leading-[1.7] text-black/80 font-inter text-center lg:text-left max-w-xl mx-auto lg:mx-0">
               <p>
-                Lorem ipsum dolor sit amet consectetur. Viverra vitae dis tincidunt 
-                varius vulputate ornare quis sed. Imperdiet consequat purus accumsan 
-                pharetra nibh odio viverra senectus at. Id at tincidunt at imperdiet 
-                lectus est fermentum imperdiet. Nulla eget sit leo.
+                Streamline loan management, automate operations,
+                and gain real-time insights with JAMP360.
+                Upgrade your financial systems now.
               </p>
             </div>
 
