@@ -143,29 +143,59 @@ export function HeroSection() {
           transform: translateY(-6px) scale(1.02);
         }
 
-        /* ========== MOBILE‑ONLY: content near top, steps as second screen ========== */
+        
+         
+         
+        /* ========== MOBILE‑ONLY ========== */
         @media (max-width: 640px) {
-          /* Hero section: full viewport, content starts near top */
+          /* Remove parent vertical padding */
+          .relative.z-10 {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+          }
+
+          /* Hero section: full viewport, content near top */
           .hero-viewport {
             min-height: 100svh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;  /* changed from 'center' */
+            justify-content: flex-start;
             gap: 1.5rem;
             margin: 0;
-            padding-top: 2rem;            /* gives a little breathing room at the very top */
-            padding-bottom: 2rem;
+            padding-top: 6rem;
+            padding-bottom: 0;
           }
-          /* Steps section: full viewport, centered vertically */
+          /* Steps section: full viewport, centered */
           .steps-viewport {
             min-height: 100svh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             margin-top: 0 !important;
-            padding: 2rem 0;
+            padding-top: 0;
+            padding-bottom: 2rem;
           }
-          /* Futuristic text enhancements */
+          
+          /* Centered text */
+          .hero-viewport h1,
+          .steps-viewport h2 {
+            text-align: center !important;
+            width: 100% !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .hero-viewport p,
+          .steps-viewport p {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+          .steps-viewport h2,
+          .steps-viewport p {
+            text-align: center !important;
+          }
+          
+          /* Futuristic typography */
           .hero-viewport h1 {
             text-shadow: 0 2px 12px rgba(130, 251, 142, 0.15);
             letter-spacing: -0.01em;
@@ -180,15 +210,20 @@ export function HeroSection() {
           .steps-viewport p {
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
           }
+          
           /* Illustration spacing */
           .hero-illustration {
             margin-top: 0.5rem !important;
             margin-bottom: 0.5rem !important;
           }
-          /* Grid gap adjustment for steps */
+          /* Grid gap adjustment */
           .steps-viewport .grid {
             gap: 1.25rem;
           }
+            .step-card-wrapper {
+      display: flex;
+      justify-content: center;
+    }
         }
       `}</style>
     </section>
