@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 export function DecorIconsserviceSection() {
   return (
     <section className="w-full bg-white">
@@ -6,29 +9,60 @@ export function DecorIconsserviceSection() {
           
           {/* Left Column: Text */}
           <div className="w-full lg:max-w-[520px]">
-            <h2 className="text-[clamp(24px,3.8vw,46px)] font-bold leading-[1.08] text-black font-inter text-center lg:text-left">
+            {/* Animated Headline with Glow */}
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="text-[clamp(24px,3.8vw,46px)] font-bold leading-[1.08] text-black font-inter text-center lg:text-left tracking-tight"
+            >
               More activity,
               <br />
-              increase the amount
+              <span 
+                className="text-[#219653] inline-block"
+                style={{ 
+                  textShadow: "0 0 15px rgba(152, 240, 144, 0.4)",
+                  filter: "drop-shadow(0px 2px 2px rgba(0,0,0,0.05))"
+                }}
+              >
+                increase the amount
+              </span>
               <br />
-              you of loan
-            </h2>
+              of your loan
+            </motion.h2>
             
-            <div className="mt-8 text-[clamp(14px,1.3vw,18px)] font-normal leading-[1.55] text-black/80 font-inter text-center lg:text-left">
-              <p>Fast, flexible, and affordable loans.</p>
-              <p>for individuals and small businesses.</p>
+            {/* Subtext with subtle reveal animation */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="mt-8 text-[clamp(14px,1.3vw,18px)] font-normal leading-[1.55] text-black/80 font-inter text-center lg:text-left"
+            >
+              <p className="hover:text-black transition-colors">Fast, flexible, and affordable loans.</p>
+              <p className="hover:text-black transition-colors">for individuals and small businesses.</p>
               <br />
-              <p>with no collateral. </p>
-              <p>Apply for a loan today.</p>
-            </div>
+              <p className="font-semibold text-black relative inline-block">
+                with no collateral.
+                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#98F090]/30"></span>
+              </p>
+              <p className="mt-1">Apply for a loan today.</p>
+            </motion.div>
 
-            {/* Desktop Button - Hidden on Mobile */}
-            <div className="hidden lg:block mt-10">
+            {/* Desktop Button */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="hidden lg:block mt-10"
+            >
               <ReadMoreButton />
-            </div>
+            </motion.div>
           </div>
 
-          {/* Right Column: Visual Container */}
+          {/* Right Column: Visual Container (Images untouched) */}
           <div className="flex flex-col items-center w-full max-w-[760px] mx-auto">
             <div className="relative w-full aspect-[760/560] overflow-hidden">
               <img
@@ -50,7 +84,6 @@ export function DecorIconsserviceSection() {
               <img src="/assets/Union-43.svg" alt="" className="pointer-events-none absolute z-20" style={{ left: "84%", top: "70%", width: "clamp(40px, 5vw, 88px)" }} />
             </div>
 
-            {/* Mobile Button - Only visible on small screens under the image */}
             <div className="lg:hidden mt-8">
               <ReadMoreButton />
             </div>
@@ -61,18 +94,17 @@ export function DecorIconsserviceSection() {
   );
 }
 
-// Reusable Button Component to keep code clean
 function ReadMoreButton() {
   return (
-    <button className="group flex items-center justify-center gap-2 bg-[#98F090] border border-[#219653]/30 hover:bg-[#82e07a] transition-colors rounded-[8px] w-[174px] h-[53px]">
-      <div className="w-5 h-5 flex items-center justify-center shrink-0">
+    <button className="group flex items-center justify-center gap-2 bg-[#98F090] border border-[#219653]/30 hover:bg-[#82e07a] transition-all hover:shadow-[0_0_20px_rgba(152,240,144,0.4)] rounded-[8px] w-[174px] h-[53px]">
+      <div className="w-5 h-5 flex items-center justify-center shrink-0 group-hover:rotate-12 transition-transform">
         <img 
           src="/assets/Union-6.svg" 
           alt="" 
           className="w-full h-full object-contain"
         />
       </div>
-      <span className="text-black font-semibold text-sm  decoration-1">
+      <span className="text-black font-semibold text-sm">
         Read more
       </span>
     </button>

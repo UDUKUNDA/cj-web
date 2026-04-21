@@ -1,76 +1,118 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 
 // --- REUSABLE SUB-COMPONENT: READ MORE BUTTON ---
-// Matches the specific styling (green bg, play icon, underline) from screenshot.
 function ReadMoreButton() {
   return (
-    <button className="group flex items-center justify-center gap-2.5 bg-[#98F090] border border-[#219653]/20 hover:bg-[#82e07a] transition-all duration-300 rounded-[8px] w-[174px] h-[53px] shadow-sm">
-      {/* Icon Wrapper */}
-      <div className="w-5 h-5 flex items-center justify-center shrink-0">
+    <motion.button 
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.98 }}
+      className="group flex items-center justify-center gap-2.5 bg-[#98F090] border border-[#219653]/20 hover:bg-[#82e07a] transition-all duration-300 rounded-[8px] w-[174px] h-[53px] shadow-sm relative overflow-hidden"
+    >
+      <div className="w-5 h-5 flex items-center justify-center shrink-0 relative z-10 group-hover:rotate-[360deg] transition-transform duration-500">
         <img 
           src="/assets/Union-6.svg" 
           alt="" 
           className="w-full h-full object-contain"
         />
       </div>
-      <span className="text-black font-semibold text-sm  decoration-1">
+      <span className="text-black font-semibold text-sm relative z-10">
         Read more
       </span>
-      {/* Label with specific Inter styling and underline */}
-      
-    </button>
+    </motion.button>
   );
 }
 
 // --- MAIN COMPONENT: SOFDEVELOPMENT ---
 export function SofDevelopment() {
   return (
-    <section className="w-full bg-white overflow-hidden">
-      <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-16 py-16 lg:py-24">
-        {/* Main Flex Layout: Text Left, Image Right (on desktop) */}
+    <section className="w-full bg-white overflow-hidden relative">
+      
+      {/* --- UNIQUE ELEMENT: TECH-GRID BACKGROUND --- */}
+      {/* This creates a subtle "Financial Engineering" vibe unique to this section */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{ 
+          backgroundImage: `linear-gradient(#01382F 1px, transparent 1px), linear-gradient(90deg, #01382F 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }}
+      />
+
+      {/* --- UNIQUE ELEMENT: FLOATING DATA PARTICLES --- */}
+      <motion.div 
+        animate={{ 
+          y: [0, -20, 0],
+          opacity: [0.1, 0.3, 0.1]
+        }}
+        transition={{ duration: 5, repeat: Infinity }}
+        className="absolute top-20 right-[10%] w-32 h-32 bg-[#98F090] rounded-full blur-[80px] pointer-events-none"
+      />
+
+      <div className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-16 py-16 lg:py-24 relative z-10">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
           
-          {/* Column 1: Text Content (Comes first on desktop, left side) */}
+          {/* Column 1: Text Content */}
           <div className="w-full lg:max-w-[580px] order-1 lg:order-1">
-            {/* Header: Specific Inter styling, dark green color, clamp for responsiveness */}
-            <h2 className="text-[clamp(34px,3.5vw,52px)] font-extrabold leading-[1.1] text-[#01382F] font-inter text-center lg:text-left tracking-tight">
-              Financial Management Systems
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-[clamp(34px,3.5vw,52px)] font-extrabold leading-[1.1] text-[#01382F] font-inter text-center lg:text-left tracking-tight"
+            >
+              {/* Added a subtle glow to the primary keyword */}
+              <span className="text-[#219653] drop-shadow-[0_0_10px_rgba(33,150,83,0.1)]">Financial Management</span>
               <br />
-              & Consultancy
-            </h2>
+              Systems & Consultancy
+            </motion.h2>
             
-            {/* Description Paragraph with specific leading and text opacity */}
-            <div className="mt-8 text-[clamp(15px,1.2vw,17px)] font-normal leading-[1.7] text-black/80 font-inter text-center lg:text-left max-w-xl mx-auto lg:mx-0">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="mt-8 text-[clamp(15px,1.2vw,17px)] font-normal leading-[1.7] text-black/80 font-inter text-center lg:text-left max-w-xl mx-auto lg:mx-0"
+            >
               <p>
                 Streamline loan management, automate operations,
-                and gain real-time insights with JAMP360.
+                and gain <span className="font-bold text-[#01382F] italic">real-time insights</span> with JAMP360.
+                <br />
                 Upgrade your financial systems now.
               </p>
-            </div>
+            </motion.div>
 
-            {/* Read More Button Wrapper: Center on mobile, left on desktop */}
-            <div className="mt-10 flex justify-center lg:justify-start">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="mt-10 flex justify-center lg:justify-start"
+            >
               <ReadMoreButton />
-            </div>
+            </motion.div>
           </div>
 
-          {/* Column 2: Visual Composition (Order-2 keeps it below text on mobile, right on desktop) */}
-          <div className="relative mx-auto w-full max-w-[700px] aspect-[700/500] order-2 lg:order-2 flex items-center justify-center">
-            {/* Primary Visual Composition: Monitor Mockup */}
+          {/* Column 2: Visual Composition (Untouched Images) */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="relative mx-auto w-full max-w-[700px] aspect-[700/500] order-2 lg:order-2 flex items-center justify-center"
+          >
             <div className="relative w-[90%] h-[90%]">
               <img
-                src="/assets/group.svg" // Path to the visual composition for this section
+                src="/assets/group.svg" 
                 alt="Software Consultancy Dashboard"
                 className="w-full h-full object-contain select-none z-10 relative"
               />
               
-              {/* Add any floating vector icons absolutely positioned here, similar to previous sections */}
               <div className="hidden lg:block absolute bottom-[20%] left-[5%] z-20 w-[60%]">
                  <img src="/assets/code-block-overlay.svg" className="absolute bottom-0 left-0 w-full" alt="" />
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>
