@@ -1,6 +1,8 @@
+ 'use client';
 import { CreateAccountforbusiness } from "@/components/landing/CreateAccountforbusiness";
 
 export function LoanOptionsSection() {
+  // Responsive table content (from first code) – uses clamp() for perfect scaling on all screens
   const tableContent = (
     <div className="flex h-full w-full flex-col">
       <div className="grid min-h-0 flex-1 grid-cols-[calc(100%/6)_calc(5*100%/6)]">
@@ -11,7 +13,6 @@ export function LoanOptionsSection() {
                 <img src="/assets/cashme.svg" alt="" className="h-[78%] w-[78%] object-contain" />
               </div>
             </div>
-
             {[
               { title: "Min Default Loan", desc: "The smallest amount you can borrow." },
               { title: "Interest Rate", desc: "The extra percentage you pay back" },
@@ -28,10 +29,10 @@ export function LoanOptionsSection() {
                       : "bg-white"
                 } px-3`}
               >
-                <div className="text-[#000000] font-inter font-bold" style={{ fontSize: "18px", lineHeight: "28px", letterSpacing: "0em" }}>
+                <div className="text-[#000000] font-inter font-bold" style={{ fontSize: "clamp(14px, 1.1vw, 18px)", lineHeight: "1.4", letterSpacing: "0em" }}>
                   {row.title}
                 </div>
-                <div className="text-[#000000] font-inter font-normal" style={{ fontSize: "14px", lineHeight: "20px", letterSpacing: "0em" }}>
+                <div className="text-[#000000] font-inter font-normal" style={{ fontSize: "clamp(11px, 0.9vw, 14px)", lineHeight: "1.3", letterSpacing: "0em" }}>
                   {row.desc}
                 </div>
               </div>
@@ -48,7 +49,7 @@ export function LoanOptionsSection() {
               <div
                 key={label}
                 className={`${colIndex === 0 ? "" : "border-l border-[#77C7BC]"} border-b border-[#77C7BC] flex items-center justify-center px-2 text-center font-inter font-bold text-black`}
-                style={{ fontSize: "24px", lineHeight: "32px", letterSpacing: "0em" }}
+                style={{ fontSize: "clamp(14px, 1.2vw, 24px)", lineHeight: "1.3", letterSpacing: "0em", padding: "clamp(8px, 1.5vw, 12px)" }}
               >
                 {label}
               </div>
@@ -73,18 +74,18 @@ export function LoanOptionsSection() {
                 
                 let customStyle = {};
                 if (isFirstRow || isSecondRow || isThirdRow) {
-                  customStyle = { fontSize: "24px", lineHeight: "32px", letterSpacing: "0em", width: (isSecondRow || isThirdRow) ? "100%" : "auto", height: (isSecondRow || isThirdRow) ? "32px" : "auto", opacity: 1 };
+                  customStyle = { fontSize: "clamp(14px, 1.2vw, 24px)", lineHeight: "1.3", letterSpacing: "0em", width: "100%", height: "auto", opacity: 1 };
                 } else if (isFourthRow) {
-                  customStyle = { fontSize: "18px", lineHeight: "28px", letterSpacing: "0em", width: "100%", height: "auto", opacity: 1 };
+                  customStyle = { fontSize: "clamp(12px, 1vw, 18px)", lineHeight: "1.3", letterSpacing: "0em", width: "100%", height: "auto", opacity: 1 };
                 } else {
-                  customStyle = { fontSize: "clamp(10px, 1.15vw, 18px)", lineHeight: "1.2" };
+                  customStyle = { fontSize: "clamp(11px, 0.9vw, 18px)", lineHeight: "1.2" };
                 }
 
                 let content: React.ReactNode = value;
                 if (isFirstRow && typeof value === "string" && value.startsWith("RWF ")) {
                   content = (
                     <>
-                      <span className="font-normal text-[18px] mr-1">RWF</span>
+                      <span className="font-normal text-[clamp(12px,1vw,18px)] mr-1">RWF</span>
                       {value.replace("RWF ", "")}
                     </>
                   );
@@ -103,7 +104,7 @@ export function LoanOptionsSection() {
           </div>
           <div
             className="border-t border-[#77C7BC] bg-[#E6FFFB] px-3 py-2 text-center font-inter font-normal text-[#004D40]"
-            style={{ fontSize: "16px", lineHeight: "24px", letterSpacing: "0em" }}
+            style={{ fontSize: "clamp(12px, 1vw, 16px)", lineHeight: "1.4", letterSpacing: "0em" }}
           >
             * We are currently focusing on bodaboda riders (motari) for our base Jambo Cash product only.
           </div>
@@ -115,18 +116,19 @@ export function LoanOptionsSection() {
   return (
     <section className="w-full bg-[#E6FFFB]">
       <div className="mx-auto w-full max-w-[1512px]">
+        {/* Mobile version: table with horizontal scroll, but the table itself is responsive via clamp */}
         <div className="lg:hidden px-4 py-10">
           <div className="mx-auto max-w-[680px] text-center">
-            <div className="text-black font-inter font-medium text-center" style={{ fontSize: "36px", lineHeight: "40px", letterSpacing: "0em" }}>
+            <div className="text-black font-inter font-medium text-center text-[clamp(28px,6vw,36px)] leading-tight">
               Credit Jambo offers multiple loan options
             </div>
-            <div className="mt-3 text-black/80 font-inter font-normal text-center" style={{ fontSize: "20px", lineHeight: "28px", letterSpacing: "0em" }}>
+            <div className="mt-3 text-black/80 font-inter text-[clamp(16px,4vw,20px)] leading-relaxed">
               Choose the loan type that matches your needs, from covering daily expenses to growing your business.
             </div>
           </div>
 
           <div className="mt-8 overflow-x-auto">
-            <div style={{ width: "max-content", height: "clamp(360px, 60vw, 520px)" }} className="min-w-[760px]">
+            <div className="min-w-[760px]" style={{ height: "clamp(360px, 60vw, 520px)" }}>
               {tableContent}
             </div>
           </div>
@@ -136,6 +138,7 @@ export function LoanOptionsSection() {
           </div>
         </div>
 
+        {/* Desktop version – absolutely positioned, untouched */}
         <div className="hidden lg:block relative w-full aspect-[1512/1305.7]">
           <div className="absolute inset-0 bg-[#E6FFFB]" />
 

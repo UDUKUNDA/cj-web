@@ -29,8 +29,8 @@ export function CreateAccountforbusiness({ embedded = false }: CreateAccountforb
     : "phoneWrap absolute lg:top-[-110px] xl:top-[-140px] lg:right-0 top-[-100px] flex justify-center items-center";
 
   const phoneColumnClassName = embedded
-    ? "min-w-0 relative flex justify-center lg:justify-end items-end order-1 lg:order-2 overflow-visible h-[150px] lg:h-full"
-    : "min-w-0 relative flex justify-center lg:justify-end items-end order-1 lg:order-2 overflow-visible h-[150px] lg:h-full";
+    ? "hidden lg:flex min-w-0 relative justify-end items-end order-1 lg:order-2 overflow-visible lg:h-full"
+    : "hidden lg:flex min-w-0 relative justify-end items-end order-1 lg:order-2 overflow-visible lg:h-full";
 
   const phoneImageClassName = embedded
     ? "w-[var(--img-width)] max-h-[calc(100%+20px)] object-contain drop-shadow-2xl"
@@ -41,8 +41,8 @@ export function CreateAccountforbusiness({ embedded = false }: CreateAccountforb
     : "w-full max-w-none px-8 md:px-12 lg:px-20 flex flex-col lg:grid lg:grid-cols-2 gap-6 lg:gap-10 relative z-10 pt-10 pb-6 lg:pt-10 lg:pb-4 h-full";
 
   const leftColumnClassName = embedded
-    ? "min-w-0 flex flex-col justify-center text-center lg:text-left order-2 lg:order-1 mt-6 lg:mt-0 pb-12 lg:pb-14"
-    : "min-w-0 flex flex-col justify-center text-center lg:text-left order-2 lg:order-1 mt-6 lg:mt-0 pb-10 lg:pb-12";
+    ? "min-w-0 flex flex-col justify-center text-center lg:text-left order-2 lg:order-1 mt-0 lg:mt-0 pb-12 lg:pb-14"
+    : "min-w-0 flex flex-col justify-center text-center lg:text-left order-2 lg:order-1 mt-0 lg:mt-0 pb-10 lg:pb-12";
 
   return (
     <section className={sectionClassName}>
