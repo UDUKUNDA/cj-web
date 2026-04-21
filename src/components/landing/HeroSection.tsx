@@ -61,16 +61,17 @@ export function HeroSection() {
           {/* Right Column - Illustration */}
           <div className="hero-illustration w-full mt-6 lg:mt-0 lg:w-1/2 animate-fade-up animation-delay-150">
             <div className="relative max-w-lg mx-auto lg:max-w-full">
+              {/* Glow effect (kept) */}
               <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(4,234,108,0.12)_0%,rgba(0,77,64,0)_70%)] rounded-full blur-xl" />
               <div className="relative transition-all duration-300 hover:scale-105 hover:drop-shadow-[0_0_15px_rgba(130,251,142,0.4)]">
                 <HeroIllustration />
               </div>
-              <div className="absolute inset-0 rounded-full border border-[#04EA6C]/10 pointer-events-none" />
+              {/* 👇 Circle removed – this line is deleted */}
             </div>
           </div>
         </div>
 
-        {/* Steps Viewport - full screen on mobile */}
+        {/* Steps Section - unchanged */}
         <div className="steps-viewport mt-12 sm:mt-20 lg:mt-24">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 sm:mb-10">
             <h2
@@ -143,18 +144,12 @@ export function HeroSection() {
           transform: translateY(-6px) scale(1.02);
         }
 
-        
-         
-         
         /* ========== MOBILE‑ONLY ========== */
         @media (max-width: 640px) {
-          /* Remove parent vertical padding */
           .relative.z-10 {
             padding-top: 0 !important;
             padding-bottom: 0 !important;
           }
-
-          /* Hero section: full viewport, content near top */
           .hero-viewport {
             min-height: 100svh;
             display: flex;
@@ -165,7 +160,6 @@ export function HeroSection() {
             padding-top: 6rem;
             padding-bottom: 0;
           }
-          /* Steps section: full viewport, centered */
           .steps-viewport {
             min-height: 100svh;
             display: flex;
@@ -175,8 +169,6 @@ export function HeroSection() {
             padding-top: 0;
             padding-bottom: 2rem;
           }
-          
-          /* Centered text */
           .hero-viewport h1,
           .steps-viewport h2 {
             text-align: center !important;
@@ -194,8 +186,6 @@ export function HeroSection() {
           .steps-viewport p {
             text-align: center !important;
           }
-          
-          /* Futuristic typography */
           .hero-viewport h1 {
             text-shadow: 0 2px 12px rgba(130, 251, 142, 0.15);
             letter-spacing: -0.01em;
@@ -210,20 +200,17 @@ export function HeroSection() {
           .steps-viewport p {
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
           }
-          
-          /* Illustration spacing */
           .hero-illustration {
             margin-top: 0.5rem !important;
             margin-bottom: 0.5rem !important;
           }
-          /* Grid gap adjustment */
           .steps-viewport .grid {
             gap: 1.25rem;
           }
-            .step-card-wrapper {
-      display: flex;
-      justify-content: center;
-    }
+          .step-card-wrapper {
+            display: flex;
+            justify-content: center;
+          }
         }
       `}</style>
     </section>
