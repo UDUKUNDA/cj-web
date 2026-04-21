@@ -128,10 +128,20 @@ export function LoanOptionsSection() {
           </div>
 
           <div className="mt-8 overflow-x-auto">
-            <div className="min-w-[760px]" style={{ height: "clamp(360px, 60vw, 520px)" }}>
+            <div className="loanOptionsMobileTable min-w-[760px]" style={{ height: "var(--loan-options-table-height)" }}>
               {tableContent}
             </div>
           </div>
+          <style jsx>{`
+            .loanOptionsMobileTable {
+              --loan-options-table-height: auto;
+            }
+            @media (min-width: 640px) {
+              .loanOptionsMobileTable {
+                --loan-options-table-height: clamp(360px, 60vw, 520px);
+              }
+            }
+          `}</style>
 
           <div className="mt-10">
             <CreateAccountforbusiness embedded />
