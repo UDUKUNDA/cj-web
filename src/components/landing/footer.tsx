@@ -16,12 +16,12 @@ export default function Footer() {
           {/* Column 1: Branding */}
           <div className="flex flex-col gap-6">
             <div className="flex items-center">
-  <img
-    src="/assets/ACCESS_DENIED-04.svg"
-    alt="Credit Jambo Logo"
-    className="w-[255px] h-[46px] object-contain opacity-100"
-  />
-</div>
+              <img
+                src="/assets/ACCESS_DENIED-04.svg"
+                alt="Credit Jambo Logo"
+                className="w-[255px] h-[46px] object-contain opacity-100"
+              />
+            </div>
             <p className="text-[#82FB8E] font-semibold text-lg italic">
               Growing with you...
             </p>
@@ -83,12 +83,32 @@ export default function Footer() {
             {/* Social Media */}
             <div className="mt-4">
               <p className="text-[#82FB8E] font-medium mb-4">Social Media:</p>
-              <div className="flex gap-4">
-                {/* Replace src paths with your actual asset locations */}
-                <SocialIcon src="/assets/whatsapp.svg" alt="WhatsApp" />
-                <SocialIcon src="/assets/instagram.svg" alt="Instagram" />
-                <SocialIcon src="/assets/linked.svg" alt="LinkedIn" />
-                <SocialIcon src="/assets/facebook.svg" alt="Facebook" />
+              <div className="flex gap-4 flex-wrap">
+                <SocialIcon 
+                  href="https://wa.me/250788268451" 
+                  src="/assets/whatsapp.svg" 
+                  alt="WhatsApp" 
+                />
+                <SocialIcon 
+                  href="https://www.instagram.com/creditjambo?igshid=YmMyMTA2M2Y%3D" 
+                  src="/assets/instagram.svg" 
+                  alt="Instagram" 
+                />
+                <SocialIcon 
+                  href="https://linkedin.com/company/credit-jambo/" 
+                  src="/assets/linked.svg" 
+                  alt="LinkedIn" 
+                />
+                <SocialIcon 
+                  href="https://www.facebook.com/creditjambo" 
+                  src="/assets/facebook.svg" 
+                  alt="Facebook" 
+                />
+                <SocialIcon 
+                  href="https://x.com/CreditJambo" 
+                  src="/assets/twitter.svg" 
+                  alt="Twitter" 
+                />
               </div>
             </div>
           </div>
@@ -110,17 +130,19 @@ export default function Footer() {
 /**
  * Local Icon Helper
  */
-function SocialIcon({ src, alt }: { src: string; alt: string }) {
+function SocialIcon({ src, alt, href }: { src: string; alt: string; href: string }) {
   return (
     <a 
-      href="#" 
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="w-10 h-10 rounded-lg bg-white flex items-center justify-center hover:bg-[#82FB8E] transition-all transform hover:-translate-y-1 active:scale-95"
     >
       <img
-  src={src}
-  alt={alt}
-  className="w-6 h-6 object-contain brightness-0"
-/>
+        src={src}
+        alt={alt}
+        className="w-6 h-6 object-contain brightness-0"
+      />
     </a>
   );
 }
