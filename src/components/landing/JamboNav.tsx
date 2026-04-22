@@ -1,7 +1,8 @@
- "use client";
+"use client";
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation"; // Added this hook
 import { MobileMenuOverlay } from "@/components/landing/MobileMenuOverlay";
 
 type NavItem = {
@@ -18,6 +19,7 @@ const navItems: NavItem[] = [
 
 export function JamboNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname(); // Get current route
 
   return (
     <>
@@ -37,22 +39,28 @@ export function JamboNav() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6 lg:space-x-8 xl:space-x-10">
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-white hover:text-[#82FB8E] transition-colors font-inter font-normal"
-                  style={{
-                    fontSize: "18px",
-                    lineHeight: "28px",
-                    letterSpacing: "0em",
-                    height: "28px",
-                    opacity: 1
-                  }}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const isActive = pathname === item.href; // Check if active
+                
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={`transition-colors font-inter ${
+                      isActive ? "text-[#82FB8E] font-semibold" : "text-white font-normal"
+                    } hover:text-[#82FB8E]`}
+                    style={{
+                      fontSize: "18px",
+                      lineHeight: "28px",
+                      letterSpacing: "0em",
+                      height: "28px",
+                      opacity: 1
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Desktop CTA Button */}
@@ -90,10 +98,15 @@ export function JamboNav() {
         </div>
       </header>
       
-      {/* Spacer to prevent content from jumping under the fixed navbar */}
       <div className="h-14 sm:h-16 w-full" aria-hidden="true" />
 
-      <MobileMenuOverlay open={mobileMenuOpen} items={navItems} onClose={() => setMobileMenuOpen(false)} />
+      {/* Passing pathname to mobile menu overlay so it can also show active state */}
+      <MobileMenuOverlay 
+        open={mobileMenuOpen} 
+        items={navItems} 
+        onClose={() => setMobileMenuOpen(false)} 
+        currentPath={pathname}
+      />
     </>
   );
 }
