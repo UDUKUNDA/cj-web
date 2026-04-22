@@ -10,11 +10,14 @@ import { SoftwareDeve } from "@/components/landing/SoftwareDev";
 export default function ServicesPage() {
   // Common motion settings for scroll reveals
   const scrollReveal = {
-    initial: { opacity: 0, y: 40 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-100px" },
-    transition: { duration: 0.8, ease: [0.21, 1.02, 0.47, 0.98] }
-  };
+  initial: { opacity: 0, y: 50 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-100px" },
+  transition: {
+    duration: 0.5,
+    ease: [0.25, 0.1, 0.25, 1] as const
+  }
+};
 
   return (
     <div className="min-h-screen bg-[#F8F9FA] overflow-x-hidden selection:bg-[#82FB8E] selection:text-[#01382F]">
@@ -56,7 +59,7 @@ export default function ServicesPage() {
               style={{
                 fontFamily: "Inter, sans-serif",
                 fontWeight: 800,
-                fontSize: "clamp(48px, 12vw, 146.57px)",
+                fontSize: "clamp(60px, 12vw, 150px)",
                 color: "transparent",
                 WebkitTextStroke: "1px rgba(2, 89, 74, 0.8)", 
                 lineHeight: "100%",

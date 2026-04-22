@@ -1,41 +1,75 @@
-import { StepCard } from "@/components/landing/StepCard";
+ type StepCardProps = {
+  step: string;
+  title: string;
+  description: string;
+  iconSrc?: string;
+  approvedBadge?: boolean;
+};
 
-export function StepsSection() {
+export function StepCard({ step, title, description, iconSrc, approvedBadge }: StepCardProps) {
   return (
-    <section className="mx-auto w-[1337.99px] pt-[55px]">
-      <div className="flex w-[1318.73px] items-center justify-between">
-        <div className="text-[36px] font-medium leading-[40px] text-white">Simple Steps to Get Your Loan</div>
-        <div className="w-[375px] text-right text-[20px] font-normal leading-[28px] text-white">
-          Our loan process is fast and reliable you can get your loan in as little as 24 hours.
-        </div>
+    <div 
+      className="relative rounded-xl border border-[rgba(130,251,142,0.26)] bg-[#005244] p-4 transition-transform duration-200 hover:scale-[1.02]"
+      style={{
+        width: "min(100%, 324.74px)",
+        height: "234.33px",
+        opacity: 1
+      }}
+    >
+      <div
+        className={
+          step === "*"
+            ? "absolute left-[14.73px] top-[5.29px] text-center text-[76.3973px] font-bold leading-[92.59px] text-[#003E34]"
+            : "absolute left-[12.8px] top-[5.21px] text-center text-[44.5916px] font-bold leading-[54px] text-[#003E34]"
+        }
+      >
+        {step}
       </div>
 
-      <div className="mt-[25px] flex items-center gap-[13px]">
-        <StepCard
-          step="1"
-          title="Loan Request"
-          description="Choose your preferred loan type and submit a request directly from the app."
-          iconSrc="/assets/Frame.svg"
-        />
-        <StepCard
-          step="2"
-          title="Loan Approval"
-          description="Our system reviews your request and quickly determines your eligibility."
-          approvedBadge
-        />
-        <StepCard
-          step="3"
-          title="Loan Disbursement"
-          description="Once approved, your loan is sent instantly to your mobile money account."
-          iconSrc="/assets/Frame-1.svg"
-        />
-        <StepCard
-          step="*"
-          title="Repayment"
-          description="Repay your loan through flexible daily, weekly, or monthly payment options the app."
-          iconSrc="/assets/Frame-2.svg"
-        />
+      {approvedBadge ? (
+        <div className="absolute left-[72.91px] top-[52px] h-[36px] w-[178.92px]">
+          <div className="absolute left-0 top-0 h-full w-full border-[3px] border-[#6CFF7B] bg-transparent" />
+          <div className="absolute left-[5.7px] top-[1px] text-[28px] font-extrabold leading-[34px] text-[#6CFF7B]">
+            APPROVED
+          </div>
+        </div>
+      ) : null}
+
+      {iconSrc ? (
+        <img src={iconSrc} alt="" className="absolute left-[128px] top-[26px] h-[64px] w-[64px]" />
+      ) : null}
+
+      <div 
+        className="absolute text-center text-white font-inter font-bold"
+        style={{
+          width: "100%",
+          height: "28px",
+          top: "131.33px",
+          left: "0",
+          fontSize: "20px",
+          lineHeight: "28px",
+          letterSpacing: "0em",
+          opacity: 1
+        }}
+      >
+        {title}
       </div>
-    </section>
+      <div 
+        className="absolute text-center text-white font-inter font-normal"
+        style={{
+          width: "min(100%, 265.001953125px)",
+          height: "auto",
+          top: "164.52px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          fontSize: "14px",
+          lineHeight: "20px",
+          letterSpacing: "0em",
+          opacity: 1
+        }}
+      >
+        {description}
+      </div>
+    </div>
   );
 }

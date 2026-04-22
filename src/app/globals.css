@@ -24,15 +24,10 @@
     @apply max-w-7xl mx-auto;
   }
 
-  .hero-illustration {
-    display: none;
-  }
-
-  @media (min-width: 1024px) {
-    .hero-illustration {
-      display: block;
-    }
-  }
+ /* Show illustration on all screens */
+.hero-illustration {
+  display: block;
+}
 
   @keyframes cj-float {
     0% {
