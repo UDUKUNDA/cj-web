@@ -1,194 +1,214 @@
-import CreateAccountCTA from "@/components/sections/CreateAccountCTA";
-import DownloadBanner from "@/components/sections/DownloadBanner";
+"use client";
+import Footer from "@/components/landing/footer";
+import { GetStarted } from "@/components/landing/GetStarted";
+import { JamboNav } from "@/components/landing/JamboNav";
+import { motion } from "framer-motion";
 
-export const metadata = {
-  title: "For business - CREDIJAMBO",
-  description: "Bridging Africa's financial gap for the unbanked.",
-};
-
-export default function AboutPage() {
-  const wrapper = "mx-auto w-full max-w-[1200px]";
-
+export default function BusinessPage() {
   return (
-    <div>
-      <section className="bg-[#f9fbf9] px-6 py-[80px] md:px-10 max-md:py-[60px] lg:px-14">
-        <div className={wrapper}>
-          <div className="flex items-start justify-between gap-[40px] max-md:flex-col max-md:gap-5">
-            <div className="flex-1">
-              <h1 className="m-0 text-[42px] leading-[1.1] font-extrabold text-[#164232] max-md:text-[32px]">
-                Bridging Africa&apos;s financial gap for the unbanked.
-              </h1>
-            </div>
-            <div className="flex-1">
-              <p className="m-0 pt-2 text-[18px] leading-[1.6] text-[#4a4a4a]">
-                Credit Jambo, licensed NDFSP by the National Bank of Rwanda, offers affordable and
-                accessible financial services to low-income earners and SMEs across Rwanda and
-                Africa, fostering financial inclusion and supporting the continent&apos;s economic
-                growth.
+    <div className="min-h-screen bg-[#F8F9FA] overflow-x-hidden">
+      <JamboNav />
+
+      {/* Hero Section - Eye Catching & Unique (As provided) */}
+      <section className="w-full bg-white flex justify-center py-16 md:py-28 px-4 overflow-hidden relative">
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#98F090]/10 blur-[100px] pointer-events-none" />
+        <div className="relative w-full max-w-[1420px] grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex justify-start"
+          >
+            <h1 
+              className="font-extrabold leading-[1.05] transition-all duration-300 text-[#004D40] tracking-tighter"
+              style={{
+                fontSize: "clamp(32px, 5vw, 54px)",
+                textShadow: "0 2px 15px rgba(0,77,64,0.05)"
+              }}
+            >
+              Bridging Africa's <br />
+              <span className="text-[#219653] drop-shadow-sm">financial gap</span> <br />
+              for the unbanked.
+            </h1>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="flex flex-col gap-8"
+          >
+            <div className="text-lg leading-relaxed text-[#343434] max-w-[616px] border-l-4 border-[#98F090] pl-6 py-2">
+              <p>
+                Credit Jambo, licensed NDFSP by the National Bank of Rwanda,
+                offers <span className="font-semibold text-black">affordable and accessible</span> financial services to low-income
+                earners and SMEs across Rwanda and Africa, fostering financial
+                inclusion and supporting the continent's economic growth.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      <section className="relative w-full font-['Segoe_UI',Tahoma,Geneva,Verdana,sans-serif]">
-        <div className="relative flex min-h-[550px] flex-col justify-end bg-[url('/assets/about-hero.jpg')] bg-cover bg-center py-[60px]">
-          <div className="absolute inset-0 bg-[rgba(11,55,39,0.45)]" />
+      {/* Section 2: Mission & Vision Section - As provided */}
+      <section className="w-full relative pb-12 lg:pb-24 overflow-hidden">
+        <div className="w-full flex justify-center px-3">
+          <div className="relative w-full max-w-[2990px] h-[400px] md:h-[600px] lg:h-[700px] overflow-hidden rounded-[24px] shadow-2xl">
+            <motion.img 
+              initial={{ scale: 1.1 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              src="/assets/Maskgroup.svg" 
+              alt="Team" 
+              className="w-full h-full object-cover" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#01382F]/40 to-transparent" />
+          </div>
+        </div>
 
-          <div className={`${wrapper} relative z-[2] px-6 md:px-10 lg:px-14`}>
-            <div className="mb-[50px] flex justify-center">
-              <span className="h-[70px] w-[70px] rounded-full bg-[#081a14]" />
-              <span className="-ml-3 h-[70px] w-[70px] rounded-full bg-[#206233]" />
-              <span className="-ml-3 h-[70px] w-[70px] rounded-full bg-[#b8ccbc]" />
-            </div>
-
-            <div className="flex w-full gap-5 max-[800px]:flex-col">
-              <article className="flex-1 rounded-[20px] bg-[#e6fdf6] p-10 text-[#164232] shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-                <img src="/assets/Union-3.svg" alt="Mission" className="h-10 w-10 object-contain" />
-                <h2 className="my-[15px] text-[1.6rem]">Our Mission</h2>
-                <p className="text-[0.95rem] leading-[1.5]">
-                  To bridge the gap between millions of unbanked Africans and accessibility of
-                  tailored finances to fulfil their dreams of prosperity.
+        <div className="max-w-[1440px] mx-auto px-4 relative z-10 -mt-10 md:-mt-32 lg:-mt-48">
+          <div className="flex flex-row gap-2 md:gap-8 items-stretch justify-center">
+            <motion.div 
+              whileHover={{ y: -8 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="flex flex-col items-start gap-4 md:gap-8 p-5 md:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.1)] bg-white/95 backdrop-blur-md w-1/2 max-w-[600px] rounded-[20px] md:rounded-[32px] border border-white"
+            >
+              <div className="w-12 h-12 md:w-20 md:h-20 bg-[#E6FFFB] rounded-2xl flex items-center justify-center shadow-inner group transition-colors">
+                <img src="/assets/ssaffaa.svg" alt="Mission" className="w-6 h-6 md:w-10 md:h-10 object-contain" />
+              </div>
+              <div className="space-y-1 md:space-y-4">
+                <h3 className="text-sm md:text-3xl font-black text-[#01382F] uppercase tracking-tighter">Our Mission</h3>
+                <p className="text-[#343434] text-[10px] md:text-lg font-medium leading-tight md:leading-relaxed">
+                  To bridge the gap between millions of unbanked Africans and accessibility of tailored finances to fulfil their dreams of prosperity.
                 </p>
-              </article>
+              </div>
+            </motion.div>
 
-              <article className="flex-1 rounded-[20px] bg-[#064536] p-10 text-white shadow-[0_10px_30px_rgba(0,0,0,0.2)]">
-                <img src="/assets/Union-2.svg" alt="Vision" className="h-10 w-10 object-contain" />
-                <h2 className="my-[15px] text-[1.6rem]">Our Vision</h2>
-                <p className="text-[0.95rem] leading-[1.5]">
-                  To become the leading financial services provider in Africa, empowering
-                  individuals and businesses to achieve their financial goals and drive economic
-                  development across the continent.
+            <motion.div 
+              whileHover={{ y: -8 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="flex flex-col items-start gap-4 md:gap-8 p-5 md:p-14 shadow-2xl bg-[#004D40] w-1/2 max-w-[600px] rounded-[20px] md:rounded-[32px] border border-[#12CFA7]/20 relative overflow-hidden"
+            >
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#12CFA7]/10 blur-[40px] rounded-full" />
+              <div className="w-12 h-12 md:w-20 md:h-20 bg-[#12CFA7] rounded-2xl flex items-center justify-center shadow-lg shadow-[#12CFA7]/20 shrink-0">
+                <img src="/assets/fgshshs.svg" alt="Vision" className="w-6 h-6 md:w-10 md:h-10 object-contain brightness-0 invert" />
+              </div>
+              <div className="space-y-1 md:space-y-4 relative z-10">
+                <h3 className="text-sm md:text-3xl font-black text-white uppercase tracking-tighter">Our Vision</h3>
+                <p className="text-gray-100 text-[10px] md:text-lg font-medium leading-tight md:leading-relaxed opacity-90">
+                  To become the leading financial services provider in Africa, empowering individuals and businesses to achieve their financial goals.
                 </p>
-              </article>
-            </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#123c2f] px-6 py-20 text-center text-white md:px-10 lg:px-14">
-        <div className={wrapper}>
-          <h2 className="mb-[10px] text-[2.5rem]">Our Values</h2>
-          <p className="mb-[50px] opacity-80">
-            Trusted by thousands of riders, vendors, and SMEs across Africa.
-          </p>
-
-          <div className="mb-5 flex gap-5 max-[800px]:flex-col">
-            <article className="flex-1 rounded-[20px] bg-white/5 px-[30px] py-10 text-center transition hover:bg-white/8">
-              <img src="/assets/Union-33.svg" alt="Innovation" className="mx-auto mb-5 h-10 w-10 object-contain" />
-              <h3 className="mb-[15px] text-[1.4rem]">Innovation</h3>
-              <p className="text-[0.95rem] leading-[1.5] opacity-70">
-                Lorem ipsum dolor sit amet consectetur. Volutpat ultrices et et
-              </p>
-            </article>
-
-            <article className="flex-1 rounded-[20px] bg-white/5 px-[30px] py-10 text-center transition hover:bg-white/8">
-              <img
-                src="/assets/Union-43.svg"
-                alt="Customer centric"
-                className="mx-auto mb-5 h-10 w-10 object-contain"
-              />
-              <h3 className="mb-[15px] text-[1.4rem]">Customer centric</h3>
-              <p className="text-[0.95rem] leading-[1.5] opacity-70">
-                facilisis vel morbi ut at faucibus. Convallis arcu quam ac auctor.
-              </p>
-            </article>
-          </div>
-
-          <div className="flex gap-5 max-[800px]:flex-col">
-            <article className="flex-1 rounded-[20px] bg-white/5 px-[30px] py-10 text-center transition hover:bg-white/8">
-              <img src="/assets/Union-23.svg" alt="Transparency" className="mx-auto mb-5 h-10 w-10 object-contain" />
-              <h3 className="mb-[15px] text-[1.4rem]">Transparency</h3>
-              <p className="text-[0.95rem] leading-[1.5] opacity-70">
-                Lorem ipsum dolor sit amet consectetur. Massa amet feugiat vel vulputate integer.
-              </p>
-            </article>
-
-            <article className="flex-1 rounded-[20px] bg-white/5 px-[30px] py-10 text-center transition hover:bg-white/8">
-              <img
-                src="/assets/Union-133.svg"
-                alt="Swift and Flexible"
-                className="mx-auto mb-5 h-10 w-10 object-contain"
-              />
-              <h3 className="mb-[15px] text-[1.4rem]">Swift &amp; Flexible</h3>
-              <p className="text-[0.95rem] leading-[1.5] opacity-70">
-                Lorem ipsum dolor sit amet consectetur. Consectetur et mauris quis diam. Tellus
-                proin.
-              </p>
-            </article>
-
-            <article className="flex-1 rounded-[20px] bg-white/5 px-[30px] py-10 text-center transition hover:bg-white/8">
-              <img
-                src="/assets/Union-1.svg"
-                alt="Community and Teamwork"
-                className="mx-auto mb-5 h-10 w-10 object-contain"
-              />
-              <h3 className="mb-[15px] text-[1.4rem]">Community &amp; Teamwork</h3>
-              <p className="text-[0.95rem] leading-[1.5] opacity-70">
-                Lorem ipsum dolor sit amet consectetur. Sit vehicula ut bibendum in dolor.
-              </p>
-            </article>
-          </div>
+      {/* Our Values Section - UNTOUCHED */}
+      <section className="w-full py-16 md:py-24 px-6 bg-[#003F35] flex flex-col items-center">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-white">Our Values</h2>
+        </div>
+        <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+          <ValueCard span="lg:col-span-3" title="Innovation" icon="/assets/BULBLE.svg" desc="Lorem ipsum dolor sit amet consectetur. Volutpat ultrices et et " />
+          <ValueCard span="lg:col-span-3" title="Customer centric" icon="/assets/headphone.svg" desc="facilisis vel morbi ut at faucibus. Convallis arcu quam ac auctor." />
+          <ValueCard span="lg:col-span-2" title="Transparency" icon="/assets/search.svg" desc="Lorem ipsum dolor sit amet consectetur. Massa amet feugiat vel vulputate integer." small />
+          <ValueCard span="lg:col-span-2" title="Swift & Flexible" icon="/assets/flash.svg" desc="Lorem ipsum dolor sit amet consectetur. Consectetur et mauris quis diam. Tellus proin." small />
+          <ValueCard span="lg:col-span-2" title="Community & Teamwork" icon="/assets/people.svg" desc="Lorem ipsum dolor sit amet consectetur. Sit vehicula ut bibendum in dolor." small />
         </div>
       </section>
 
-      <section className="bg-[#0d2b22] px-6 py-[100px] text-white md:px-10 max-lg:py-20 lg:px-14">
-        <div className={`${wrapper} flex items-start justify-between gap-[60px] max-lg:flex-col max-lg:gap-10`}>
-          <div className="flex-1">
-            <h2 className="mb-5 text-[72px] leading-[1] font-extrabold max-lg:text-[54px] xl:text-[84px]">
-              Terms &amp;
-              <br />
-              Conditions
-            </h2>
-            <p className="text-[18px] font-medium text-[#72f29b]">Click Doc to View</p>
-          </div>
+      {/* Section 4: Terms & Conditions Section - ENHANCED & EYE-CATCHING */}
+      <section className="w-full bg-[#003028] py-16 lg:py-32 px-6 overflow-hidden relative lg:min-h-[800px]">
+        {/* Subtle ambient glow for section separation */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#82FB8E]/5 to-transparent pointer-events-none" />
+        
+        <div className="max-w-[1420px] mx-auto flex flex-col lg:flex-row items-start relative">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-4 mb-12 lg:mb-0 lg:absolute" 
+            style={{ width: "var(--title-w, 100%)", height: "var(--title-h, auto)", top: "var(--title-top, 0)", left: "var(--title-left, 0)" }}
+          >
+            <style jsx>{`
+              div { --title-w: 100%; --title-h: auto; --title-top: 0; --title-left: 0; }
+              @media (min-width: 1024px) { div { --title-w: 398px; --title-h: 217px; --title-top: 0px; --title-left: 125.3px; } }
+            `}</style>
+            <h2 className="text-white font-bold leading-[0.9] tracking-tight" style={{ fontSize: "clamp(50px, 6vw, 90px)" }}>Terms & <br /> Conditions</h2>
+            <motion.p 
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 3, repeat: Infinity }}
+              className="text-[#82FB8E] text-lg md:text-xl font-medium tracking-wide"
+            >
+              Click Doc to View
+            </motion.p>
+          </motion.div>
 
-          <div className="flex-[1.2]">
-            <ol className="list-none p-0">
-              <li className="mb-[25px] flex items-baseline text-[32px] max-lg:text-[24px]">
-                <span className="mr-[15px]">1.</span>
-                <a href="#" className="underline underline-offset-[8px] transition hover:text-[#72f29b]">
-                  Lending Terms &amp; Conditions
-                </a>
-                <span className="ml-[10px] text-[14px] opacity-80">(Kinyarwanda)</span>
-              </li>
-              <li className="mb-[25px] flex items-baseline text-[32px] max-lg:text-[24px]">
-                <span className="mr-[15px]">2.</span>
-                <a href="#" className="underline underline-offset-[8px] transition hover:text-[#72f29b]">
-                  Social Media Policy
-                </a>
-              </li>
-              <li className="mb-[25px] flex items-baseline text-[32px] max-lg:text-[24px]">
-                <span className="mr-[15px]">3.</span>
-                <a href="#" className="underline underline-offset-[8px] transition hover:text-[#72f29b]">
-                  Acceptable Use Policy
-                </a>
-              </li>
-              <li className="mb-[25px] flex items-baseline text-[32px] max-lg:text-[24px]">
-                <span className="mr-[15px]">4.</span>
-                <a href="#" className="underline underline-offset-[8px] transition hover:text-[#72f29b]">
-                  Customer Service Charter
-                </a>
-              </li>
-              <li className="mb-[25px] flex items-baseline text-[32px] max-lg:text-[24px]">
-                <span className="mr-[15px]">5.</span>
-                <a href="#" className="underline underline-offset-[8px] transition hover:text-[#72f29b]">
-                  Workplace Anti-bullying Policy
-                </a>
-              </li>
-              <li className="mb-[25px] flex items-baseline text-[32px] max-lg:text-[24px]">
-                <span className="mr-[15px]">6.</span>
-                <a href="#" className="underline underline-offset-[8px] transition hover:text-[#72f29b]">
-                  Privacy &amp; Cookies Policy
-                </a>
-              </li>
-            </ol>
+          <div className="flex flex-col w-full lg:absolute" style={{ width: "var(--list-w, 100%)", height: "var(--list-h, auto)", top: "var(--list-top, 0)", left: "var(--list-left, 0)" }}>
+            <style jsx>{`
+              div { --list-w: 100%; --list-h: auto; --list-top: 0; --list-left: 0; }
+              @media (min-width: 1024px) { div { --list-w: 662px; --list-h: 348px; --list-top: 0px; --list-left: 719.62px; } }
+            `}</style>
+            <motion.ul 
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0 },
+                show: { opacity: 1, transition: { staggerChildren: 0.1 } }
+              }}
+              className="flex flex-col gap-6 md:gap-8"
+            >
+              {[
+                { label: "Lending Terms & Conditions", sub: "(Kinyarwanda)" },
+                { label: "Social Media Policy" },
+                { label: "Acceptable Use Policy" },
+                { label: "Customer Service Charter" },
+                { label: "Workplace Anti-bullying Policy" },
+                { label: "Privacy & Cookies Policy" },
+              ].map((item, index) => (
+                <motion.li 
+                  key={index} 
+                  variants={{ hidden: { opacity: 0, x: 20 }, show: { opacity: 1, x: 0 } }}
+                  whileHover={{ x: 10 }}
+                  className="flex items-start gap-4 md:gap-6 group cursor-pointer transition-all duration-300"
+                >
+                  <span className="text-white text-2xl md:text-4xl font-light opacity-30 group-hover:opacity-100 group-hover:text-[#82FB8E] min-w-[40px] transition-all duration-300">
+                    {(index + 1).toString().padStart(2, '0')}.
+                  </span>
+                  <div className="flex flex-wrap items-baseline gap-2 border-b-[1px] border-white/20 pb-1 group-hover:border-[#82FB8E] transition-all duration-300 w-full">
+                    <span className="text-white font-normal group-hover:text-[#82FB8E] transition-colors leading-tight" style={{ fontSize: "clamp(20px, 2.5vw, 32px)" }}>
+                      {item.label}
+                    </span>
+                    {item.sub && <span className="text-white text-[10px] md:text-xs font-light opacity-60 group-hover:opacity-100">{item.sub}</span>}
+                  </div>
+                </motion.li>
+              ))}
+            </motion.ul>
           </div>
         </div>
       </section>
+      
+      <GetStarted />
+      <Footer />
+    </div>
+  );
+}
 
-      <CreateAccountCTA />
-      <DownloadBanner />
+function ValueCard({ span, title, desc, icon, small }: { span: string, title: string, desc: string, icon?: string, small?: boolean }) {
+  return (
+    <div className={`${span} group relative overflow-hidden bg-[#003028] p-8 md:p-10 rounded-[32px] flex flex-col items-center text-center space-y-6 border border-white/5 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(130,251,142,0.1)]`}>
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ background: 'radial-gradient(circle at center, rgba(130,251,142,0.08) 0%, transparent 70%)' }} />
+      <div className="text-[#82FB8E] w-12 h-12 md:w-16 md:h-16 flex items-center justify-center transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:drop-shadow-[0_0_10px_rgba(130,251,142,0.5)]">
+        {icon ? <img src={icon} alt={title} className="w-full h-full object-contain" /> : <div className="w-8 h-8 bg-[#82FB8E] rounded-full opacity-20" />}
+      </div>
+      <div className="relative z-10 space-y-4">
+        <h3 className={`${small ? 'text-xl' : 'text-2xl'} font-bold text-white transition-colors duration-300 group-hover:text-[#82FB8E]`}>{title}</h3>
+        <p className="text-gray-400 leading-relaxed text-sm md:text-base transition-colors duration-300 group-hover:text-gray-200">{desc}</p>
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#82FB8E]/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
     </div>
   );
 }
