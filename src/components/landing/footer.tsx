@@ -62,9 +62,9 @@ export default function Footer() {
           {/* Column 3: Newsletter & Socials */}
           <div className="flex flex-col gap-6">
             <h3 className="text-[#82FB8E] font-bold text-xl">Our Privacy & Cookies Policy</h3>
-            <p className="text-gray-300">Sign up to get the latest news on our products.</p>
+            {/* <p className="text-gray-300">Sign up to get the latest news on our products.</p>
             
-            {/* Subscription Form */}
+             Subscription Form 
             <div className="border border-[#82FB8E] rounded-xl overflow-hidden mt-2 max-w-[340px]">
               <div className="p-3 bg-[#002B24] flex flex-col">
                 <label className="text-xs text-gray-400 px-1">Email:</label>
@@ -79,7 +79,7 @@ export default function Footer() {
                 <span className="text-xl">→</span>
               </button>
             </div>
-
+            */}
             {/* Social Media */}
             <div className="mt-4">
               <p className="text-[#82FB8E] font-medium mb-4">Social Media:</p>
