@@ -46,15 +46,17 @@ export default function Footer() {
 
         <div className="cj-footer-col">
           <h3 className="cj-footer-heading">Our Privacy & Cookies Policy</h3>
-          <p className="cj-footer-newsletter-text">Sign up to get the latest news on our products.</p>
+          {/*<p className="cj-footer-newsletter-text">Sign up to get the latest news on our products.</p>
 
-          <div className="cj-footer-subscribe-box">
-            <div className="cj-footer-input-group">
-              <label htmlFor="footer-email">Email:</label>
-              <input id="footer-email" type="email" placeholder="youremail@gmail.com" />
-            </div>
-            <button className="cj-footer-subscribe-btn">Subscribe &rarr;</button>
-          </div>
+          
+<div className="cj-footer-subscribe-box">
+  <div className="cj-footer-input-group">
+    <label htmlFor="footer-email">Email:</label>
+    <input id="footer-email" type="email" placeholder="youremail@gmail.com" />
+  </div>
+  <button className="cj-footer-subscribe-btn">Subscribe &rarr;</button>
+</div>
+*/}
 
           <div className="cj-footer-socials">
             <p className="cj-footer-label">Social Media:</p>

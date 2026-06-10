@@ -162,12 +162,12 @@ export default function BusinessPage() {
               className="flex flex-col gap-6 md:gap-8"
             >
               {[
-                { label: "Lending Terms & Conditions", sub: "(Kinyarwanda)" },
-                { label: "Social Media Policy" },
-                { label: "Acceptable Use Policy" },
-                { label: "Customer Service Charter" },
-                { label: "Workplace Anti-bullying Policy" },
-                { label: "Privacy & Cookies Policy" },
+                { label: "Lending Terms & Conditions", sub: "(Kinyarwanda)", pdf: "/assets/Credit Jambo T&Cs.pdf" },
+                { label: "Social Media Policy", pdf: "/assets/CreditJambo - Social Media Policy.pdf" },
+                { label: "Acceptable Use Policy", pdf: "/assets/CreditJambo - Acceptable Use Policy.pdf" },
+                { label: "Customer Service Charter", pdf: "/assets/CreditJambo - Customer Service Charter.pdf" },
+                { label: "Workplace Anti-bullying Policy", pdf: "/assets/CreditJambo - Workplace Anti-Bullying Policy.pdf" },
+                { label: "Privacy & Cookies Policy", pdf: "/assets/CreditJambo_Privacy and Cookies Policy.pdf" },
               ].map((item, index) => (
                 <motion.li 
                   key={index} 
@@ -175,20 +175,28 @@ export default function BusinessPage() {
                   whileHover={{ x: 10 }}
                   className="flex items-start gap-4 md:gap-6 group cursor-pointer transition-all duration-300"
                 >
-                  <span className="text-white text-2xl md:text-4xl font-light opacity-30 group-hover:opacity-100 group-hover:text-[#82FB8E] min-w-[40px] transition-all duration-300">
-                    {(index + 1).toString().padStart(2, '0')}.
-                  </span>
-                  <div className="flex flex-wrap items-baseline gap-2 border-b-[1px] border-white/20 pb-1 group-hover:border-[#82FB8E] transition-all duration-300 w-full">
-                    <span className="text-white font-normal group-hover:text-[#82FB8E] transition-colors leading-tight" style={{ fontSize: "clamp(20px, 2.5vw, 32px)" }}>
-                      {item.label}
+                  <a 
+                    href={item.pdf} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-start gap-4 md:gap-6 w-full no-underline"
+                  >
+                    <span className="text-white text-2xl md:text-4xl font-light opacity-30 group-hover:opacity-100 group-hover:text-[#82FB8E] min-w-[40px] transition-all duration-300">
+                      {(index + 1).toString().padStart(2, '0')}.
                     </span>
-                    {item.sub && <span className="text-white text-[10px] md:text-xs font-light opacity-60 group-hover:opacity-100">{item.sub}</span>}
-                  </div>
+                    <div className="flex flex-wrap items-baseline gap-2 border-b-[1px] border-white/20 pb-1 group-hover:border-[#82FB8E] transition-all duration-300 w-full">
+                      <span className="text-white font-normal group-hover:text-[#82FB8E] transition-colors leading-tight" style={{ fontSize: "clamp(20px, 2.5vw, 32px)" }}>
+                        {item.label}
+                      </span>
+                      {item.sub && <span className="text-white text-[10px] md:text-xs font-light opacity-60 group-hover:opacity-100">{item.sub}</span>}
+                    </div>
+                  </a>
                 </motion.li>
               ))}
             </motion.ul>
           </div>
         </div>
+  
       </section>
       
       <GetStarted />
