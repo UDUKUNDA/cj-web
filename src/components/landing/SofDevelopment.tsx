@@ -103,7 +103,7 @@ export function SofDevelopment() {
           >
             <div className="relative w-[90%] h-[90%]">
               <img
-                src="/assets/group.svg" 
+                src="/assets/Group.svg" 
                 alt="Software Consultancy Dashboard"
                 className="w-full h-full object-contain select-none z-10 relative"
               />

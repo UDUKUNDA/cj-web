@@ -120,7 +120,7 @@ export default function BusinessPage() {
       </section>
 
       {/* Section 4: Terms & Conditions Section - ENHANCED & EYE-CATCHING */}
-      <section className="w-full bg-[#003028] py-16 lg:py-32 px-6 overflow-hidden relative lg:min-h-[800px]">
+      <section id="terms-and-conditions"  className="w-full bg-[#003028] py-16 lg:py-32 px-6 overflow-hidden relative lg:min-h-[800px]">
         {/* Subtle ambient glow for section separation */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#82FB8E]/5 to-transparent pointer-events-none" />
         
