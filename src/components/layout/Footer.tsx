@@ -1,3 +1,5 @@
+import { FacebookIcon, InstagramIcon, LinkedInIcon, WhatsAppIcon } from "./SocialIcons";
+
 export default function Footer() {
   return (
     <footer className="cj-footer-container">
@@ -62,19 +64,19 @@ export default function Footer() {
             <p className="cj-footer-label">Social Media:</p>
             <div className="cj-footer-icons">
               <a href="#" className="cj-footer-icon" aria-label="WhatsApp">
-                <img src="/assets/whatsapp.svg" alt="WhatsApp" />
+                <WhatsAppIcon />
               </a>
 
               <a href="#" className="cj-footer-icon" aria-label="Facebook">
-                <img src="/assets/facebook.svg" alt="Facebook" />
+                <FacebookIcon />
               </a>
 
               <a href="#" className="cj-footer-icon" aria-label="Instagram">
-                <img src="/assets/instageam.svg" alt="Instagram" />
+                <InstagramIcon />
               </a>
 
               <a href="#" className="cj-footer-icon" aria-label="LinkedIn">
-                <img src="/assets/linked-in.svg" alt="LinkedIn" />
+                <LinkedInIcon />
               </a>
             </div>
           </div>
