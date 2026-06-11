@@ -7,7 +7,7 @@ export function DecorIconsserviceSection() {
       {/* Background set to pure solid white */}
       <div className="absolute inset-0 bg-white pointer-events-none" />
       
-      <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-16 sm:py-20">
+      <div className="relative z-10 mx-auto max-w-[1400px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-16 sm:py-15">
         <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
           
           {/* Left Column: Text */}

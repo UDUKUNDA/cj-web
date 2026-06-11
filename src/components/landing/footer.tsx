@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { FacebookIcon, InstagramIcon, LinkedInIcon, TwitterIcon, WhatsAppIcon } from "./SocialIcons";
 
 /**
  * Footer Component
@@ -81,32 +82,33 @@ export default function Footer() {
             </div>
             */}
             {/* Social Media */}
+            {/* Social Media */}
             <div className="mt-4">
               <p className="text-[#82FB8E] font-medium mb-4">Social Media:</p>
               <div className="flex gap-4 flex-wrap">
                 <SocialIcon 
                   href="https://wa.me/250788268451" 
-                  src="/assets/whatsapp.svg" 
+                  icon="whatsapp"
                   alt="WhatsApp" 
                 />
                 <SocialIcon 
                   href="https://www.instagram.com/creditjambo?igshid=YmMyMTA2M2Y%3D" 
-                  src="/assets/instagram.svg" 
+                  icon="instagram"
                   alt="Instagram" 
                 />
                 <SocialIcon 
                   href="https://linkedin.com/company/credit-jambo/" 
-                  src="/assets/linked.svg" 
+                  icon="linkedin"
                   alt="LinkedIn" 
                 />
                 <SocialIcon 
                   href="https://www.facebook.com/creditjambo" 
-                  src="/assets/facebook.svg" 
+                  icon="facebook"
                   alt="Facebook" 
                 />
                 <SocialIcon 
                   href="https://x.com/CreditJambo" 
-                  src="/assets/twitter.svg" 
+                  icon="twitter"
                   alt="Twitter" 
                 />
               </div>
@@ -130,19 +132,30 @@ export default function Footer() {
 /**
  * Local Icon Helper
  */
-function SocialIcon({ src, alt, href }: { src: string; alt: string; href: string }) {
+const iconComponents = {
+  whatsapp: WhatsAppIcon,
+  facebook: FacebookIcon,
+  instagram: InstagramIcon,
+  linkedin: LinkedInIcon,
+  twitter: TwitterIcon,
+};
+
+function SocialIcon({ icon, alt, href }: { icon: keyof typeof iconComponents; alt: string; href: string }) {
+  const IconComponent = iconComponents[icon];
+  
+  if (!IconComponent) return null;
+
   return (
     <a 
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-10 h-10 rounded-lg bg-white flex items-center justify-center hover:bg-[#82FB8E] transition-all transform hover:-translate-y-1 active:scale-95"
+      className="w-10 h-10 rounded-lg bg-white flex items-center justify-center hover:bg-[#82FB8E] transition-all transform hover:-translate-y-1 active:scale-95 group"
+      aria-label={alt}
     >
-      <img
-        src={src}
-        alt={alt}
-        className="w-6 h-6 object-contain brightness-0"
-      />
+      <span className="w-6 h-6 text-[#00362D] group-hover:text-white transition-colors">
+        <IconComponent />
+      </span>
     </a>
   );
 }
