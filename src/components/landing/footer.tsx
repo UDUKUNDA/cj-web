@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import { FacebookIcon, InstagramIcon, LinkedInIcon, TwitterIcon, WhatsAppIcon } from "./SocialIcons";
 
 /**
@@ -118,13 +119,19 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full bg-black py-6 border-t border-gray-900">
-        <div className="max-w-[1440px] mx-auto px-6 flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-gray-400">
-          <a href="#" className="hover:text-white border-b border-gray-700">Terms & Conditions</a>
-          <span className="hidden md:inline">|</span>
-          <p>Credit Jambo Ltd © 2025</p>
-        </div>
-      </div>
+      {/* Bottom Bar */}
+<div className="w-full bg-black py-6 border-t border-gray-900">
+  <div className="max-w-[1440px] mx-auto px-6 flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-gray-400">
+    <Link 
+      href="/about#terms-and-conditions" 
+      className="hover:text-white border-b border-gray-700 transition-colors"
+    >
+      Terms & Conditions
+    </Link>
+    <span className="hidden md:inline">|</span>
+    <p>Credit Jambo Ltd © {new Date().getFullYear()}</p>
+  </div>
+</div>
     </footer>
   );
 }
