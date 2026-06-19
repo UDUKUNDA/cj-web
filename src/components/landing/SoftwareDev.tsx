@@ -91,7 +91,8 @@ export function SoftwareDeve() {
               </p>
             </motion.div>
 
-            <motion.div 
+            {/* Read More Button Wrapper Hidden */}
+            {/* <motion.div 
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -99,7 +100,7 @@ export function SoftwareDeve() {
               className="mt-10 md:mt-12 flex justify-center lg:justify-start"
             >
               <ReadMoreButton />
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </div>

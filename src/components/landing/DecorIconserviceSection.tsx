@@ -51,9 +51,10 @@ export function DecorIconsserviceSection() {
               <p className="mt-1">Apply for a loan today.</p>
             </motion.div>
 
-            <div className="hidden lg:block mt-10">
+            {/* Desktop Button Hidden */}
+            {/* <div className="hidden lg:block mt-10">
               <ReadMoreButton />
-            </div>
+            </div> */}
           </div>
 
           {/* Right Column: Visual Container (Same Icon/Image Arrangement) */}
@@ -88,9 +89,10 @@ export function DecorIconsserviceSection() {
               </div>
             </div>
 
-            <div className="lg:hidden mt-8 flex justify-center">
+            {/* Mobile Button Hidden */}
+            {/* <div className="lg:hidden mt-8 flex justify-center">
               <ReadMoreButton />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

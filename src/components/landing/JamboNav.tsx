@@ -19,6 +19,7 @@ const navItems: NavItem[] = [
 
 export function JamboNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showAlertCard, setShowAlertCard] = useState(false); // State for the custom modal card
   const pathname = usePathname(); // Get current route
 
   return (
@@ -64,12 +65,12 @@ export function JamboNav() {
             </nav>
 
             {/* Desktop CTA Button */}
-            <Link
-              href="/"
-              className="hidden md:inline-flex items-center justify-center px-6 py-2 rounded-full border border-[#04EA6C] bg-[#82FB8E] text-[#01382F] text-sm font-medium hover:bg-[#6CFF7B] transition-colors"
+            <button
+              onClick={() => setShowAlertCard(true)}
+              className="hidden md:inline-flex items-center justify-center px-6 py-2 rounded-full border border-[#04EA6C] bg-[#82FB8E] text-[#01382F] text-sm font-medium hover:bg-[#6CFF7B] transition-colors cursor-pointer"
             >
               Get started
-            </Link>
+            </button>
 
             {/* Mobile Menu Button */}
             <button
@@ -90,8 +91,7 @@ export function JamboNav() {
                 {mobileMenuOpen ? (
                   <path d="M6 18L18 6M6 6l12 12" />
                 ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
+                  <path d="M4 6h16M4 12h16M4 18h16"/>)}
               </svg>
             </button>
           </div>
@@ -102,11 +102,44 @@ export function JamboNav() {
 
       {/* Passing pathname to mobile menu overlay so it can also show active state */}
       <MobileMenuOverlay 
-        open={mobileMenuOpen} 
-        items={navItems} 
-        onClose={() => setMobileMenuOpen(false)} 
-        currentPath={pathname}
-      />
+  open={mobileMenuOpen} 
+  items={navItems} 
+  onClose={() => setMobileMenuOpen(false)} 
+  currentPath={pathname}
+  onGetStartedClick={() => setShowAlertCard(true)} // <-- Add this line right here!
+/>
+
+      {/* Custom Launching Soon Card Modal */}
+      {showAlertCard && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
+          {/* Backdrop Click Closer */}
+          <div className="absolute inset-0" onClick={() => setShowAlertCard(false)} />
+          
+          {/* Card Frame */}
+          <div className="relative w-full max-w-md transform overflow-hidden rounded-2xl bg-[#01382F] p-8 text-center shadow-2xl border border-[#04EA6C]/30 transition-all">
+            {/* Accent Glowing Ring Element */}
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#82FB8E]/10 mb-4">
+              <svg className="h-8 w-8 text-[#82FB8E]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+
+            <h3 className="text-xl font-bold font-inter text-white mb-2">
+              We Are Launching Soon!
+            </h3>
+            <p className="text-gray-300 text-sm leading-relaxed mb-6 font-inter">
+              Thank you for your interest! We are putting the final touches on our platforms. Stay tuned, secure and inclusive financial services are coming your way shortly.
+            </p>
+
+            <button
+              onClick={() => setShowAlertCard(false)}
+              className="w-full inline-flex justify-center items-center px-5 py-2.5 rounded-xl bg-[#82FB8E] text-[#01382F] font-semibold text-sm hover:bg-[#6CFF7B] transition-colors cursor-pointer shadow-md"
+            >
+              Got it, thanks!
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
