@@ -82,7 +82,8 @@ export function SofDevelopment() {
               </p>
             </motion.div>
 
-            <motion.div 
+            {/* Read More Button Wrapper Hidden */}
+            {/* <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -90,7 +91,7 @@ export function SofDevelopment() {
               className="mt-10 flex justify-center lg:justify-start"
             >
               <ReadMoreButton />
-            </motion.div>
+            </motion.div> */}
           </div>
 
           {/* Column 2: Visual Composition (Untouched Images) */}

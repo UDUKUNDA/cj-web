@@ -111,11 +111,11 @@ export default function BusinessPage() {
           <h2 className="text-3xl md:text-5xl font-bold text-white">Our Values</h2>
         </div>
         <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
-          <ValueCard span="lg:col-span-3" title="Innovation" icon="/assets/BULBLE.svg" desc="Lorem ipsum dolor sit amet consectetur. Volutpat ultrices et et " />
-          <ValueCard span="lg:col-span-3" title="Customer centric" icon="/assets/headphone.svg" desc="facilisis vel morbi ut at faucibus. Convallis arcu quam ac auctor." />
-          <ValueCard span="lg:col-span-2" title="Transparency" icon="/assets/search.svg" desc="Lorem ipsum dolor sit amet consectetur. Massa amet feugiat vel vulputate integer." small />
-          <ValueCard span="lg:col-span-2" title="Swift & Flexible" icon="/assets/flash.svg" desc="Lorem ipsum dolor sit amet consectetur. Consectetur et mauris quis diam. Tellus proin." small />
-          <ValueCard span="lg:col-span-2" title="Community & Teamwork" icon="/assets/people.svg" desc="Lorem ipsum dolor sit amet consectetur. Sit vehicula ut bibendum in dolor." small />
+          <ValueCard span="lg:col-span-3" title="Innovation" icon="/assets/BULBLE.svg" desc="We serve our customers by embracing new ideas, technology, and solutions that make financial services more accessible and effective. " />
+          <ValueCard span="lg:col-span-3" title="Customer centric" icon="/assets/headphone.svg" desc="Our customers are at the heart of everything we do. We listen to their needs and provide products and services that help them achieve their financial goals." />
+          <ValueCard span="lg:col-span-2" title="Transparency" icon="/assets/search.svg" desc="We communicate clearly, honestly, and openly. Our customers can trust us to provide straightforward information with no hidden surprises." small />
+          <ValueCard span="lg:col-span-2" title="Swift & Flexible" icon="/assets/flash.svg" desc="We deliver fast, efficient, and adaptable financial solutions that respond to the changing needs of our customers and businesses." small />
+          <ValueCard span="lg:col-span-2" title="Community & Teamwork" icon="/assets/people.svg" desc="We believe in growing together. By supporting our communities and working together, we create lasting value and positive impact for those we serve." small />
         </div>
       </section>
 
