@@ -13,9 +13,10 @@ type Props = {
   items: NavItem[];
   onClose: () => void;
   currentPath: string;
+  onGetStartedClick: () => void; // Added new prop callback
 };
 
-export function MobileMenuOverlay({ open, items, onClose, currentPath }: Props) {
+export function MobileMenuOverlay({ open, items, onClose, currentPath, onGetStartedClick }: Props) {
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -27,6 +28,13 @@ export function MobileMenuOverlay({ open, items, onClose, currentPath }: Props) 
       window.removeEventListener("keydown", onKey);
     };
   }, [open, onClose]);
+
+  // Handle mobile CTA action gracefully
+  const handleMobileCta = (e: React.MouseEvent) => {
+    e.preventDefault(); // Stop routing redirection
+    onClose();          // Dismiss mobile slide panel
+    onGetStartedClick(); // Open the premium launch card
+  };
 
   return (
     <>
@@ -177,7 +185,9 @@ export function MobileMenuOverlay({ open, items, onClose, currentPath }: Props) 
           color: #011f18;
           font-size: 15px;
           font-weight: 700;
-          text-decoration: none;
+          border: none;
+          outline: none;
+          cursor: pointer;
           letter-spacing: -0.01em;
           transition: filter 0.15s;
         }
@@ -241,19 +251,19 @@ export function MobileMenuOverlay({ open, items, onClose, currentPath }: Props) 
 
             <div className="mob-sep" />
 
-            {/* CTA */}
+            {/* CTA (Changed from Link to button and wired to handleMobileCta) */}
             <div className="mob-cta-wrap">
-              <Link href="/" onClick={onClose} className="mob-cta">
+              <button onClick={handleMobileCta} className="mob-cta">
                 Get started
-              </Link>
+              </button>
             </div>
 
            {/* Footer */}
-<div className="mob-footer">
-  <p className="mob-footer-text">
-    © {new Date().getFullYear()} Credit Jambo
-  </p>
-</div>
+           <div className="mob-footer">
+             <p className="mob-footer-text">
+               © {new Date().getFullYear()} Credit Jambo
+             </p>
+           </div>
 
           </div>
         </div>
