@@ -1,9 +1,11 @@
- 'use client';
-import Link from 'next/link';
+'use client';
+import { useState } from 'react';
 import { HeroIllustration } from '@/components/landing/HeroIllustration';
 import { StepCard } from '@/components/landing/StepCard';
 
 export function HeroSection() {
+  const [showAlertCard, setShowAlertCard] = useState(false); // State for the custom modal card
+
   return (
     <section className="relative w-full overflow-hidden">
       {/* Animated gradient background */}
@@ -50,12 +52,13 @@ export function HeroSection() {
               Fast, affordable, and flexible micro-loans tailored to your needs.
             </p>
 
-            <Link
-              href="/"
-              className="inline-flex items-center justify-center px-6 sm:px-7 py-2.5 sm:py-3 rounded-full border border-[#04EA6C] bg-[#82FB8E] text-black font-medium text-sm sm:text-base shadow-[0_0_32px_rgba(130,251,142,0.22)] hover:bg-[#6CFF7B] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_48px_rgba(130,251,142,0.35)] active:scale-95 animate-fade-up animation-delay-200"
+            {/* Desktop / Hero CTA Button (Changed from Link to button for the custom popup) */}
+            <button
+              onClick={() => setShowAlertCard(true)}
+              className="inline-flex items-center justify-center px-6 sm:px-7 py-2.5 sm:py-3 rounded-full border border-[#04EA6C] bg-[#82FB8E] text-black font-medium text-sm sm:text-base shadow-[0_0_32px_rgba(130,251,142,0.22)] hover:bg-[#6CFF7B] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_48px_rgba(130,251,142,0.35)] active:scale-95 animate-fade-up animation-delay-200 cursor-pointer outline-none"
             >
               Get started
-            </Link>
+            </button>
           </div>
 
           {/* Right Column - Illustration */}
@@ -113,6 +116,38 @@ export function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Custom Launching Soon Card Modal */}
+      {showAlertCard && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          {/* Backdrop Click Closer */}
+          <div className="absolute inset-0" onClick={() => setShowAlertCard(false)} />
+          
+          {/* Card Frame */}
+          <div className="relative w-full max-w-md transform overflow-hidden rounded-2xl bg-[#01382F] p-8 text-center shadow-2xl border border-[#04EA6C]/30 transition-all animate-fade-up">
+            {/* Accent Glowing Ring Element */}
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#82FB8E]/10 mb-4">
+              <svg className="h-8 w-8 text-[#82FB8E]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+
+            <h3 className="text-xl font-bold font-inter text-white mb-2">
+              We Are Launching Soon!
+            </h3>
+            <p className="text-gray-300 text-sm leading-relaxed mb-6 font-inter">
+              Thank you for your interest! We are putting the final touches on our platforms. Stay tuned, secure and inclusive financial services are coming your way shortly.
+            </p>
+
+            <button
+              onClick={() => setShowAlertCard(false)}
+              className="w-full inline-flex justify-center items-center px-5 py-2.5 rounded-xl bg-[#82FB8E] text-[#01382F] font-semibold text-sm hover:bg-[#6CFF7B] transition-colors cursor-pointer shadow-md"
+            >
+              Got it, thanks!
+            </button>
+          </div>
+        </div>
+      )}
 
       <style jsx>{`
         @keyframes fadeUp {
