@@ -28,7 +28,7 @@ export default function Footer() {
                   className="w-[255px] h-[46px] object-contain opacity-100"
                 />
               </div>
-              <p className="text-[#82FB8E] font-semibold text-lg italic">
+              <p className="text-[#82FB8E] font-medium text-[12px] italic -mt-4 ml-1">
                 Growing with you...
               </p>
             </div>
