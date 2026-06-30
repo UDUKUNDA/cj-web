@@ -119,20 +119,3 @@ export function DecorIconsserviceSection() {
     </section>
   );
 }
-
-function ReadMoreButton() {
-  return (
-    <button className="group flex items-center justify-center gap-2 bg-[#98F090] border border-[#219653]/30 hover:bg-[#82e07a] transition-all hover:shadow-[0_0_20px_rgba(152,240,144,0.4)] rounded-[8px] w-[174px] h-[53px]">
-      <div className="w-5 h-5 flex items-center justify-center shrink-0 group-hover:rotate-12 transition-transform">
-        <img 
-          src="/assets/Union-6.svg" 
-          alt="" 
-          className="w-full h-full object-contain"
-        />
-      </div>
-      <span className="text-black font-semibold text-sm">
-        Read more
-      </span>
-    </button>
-  );
-}

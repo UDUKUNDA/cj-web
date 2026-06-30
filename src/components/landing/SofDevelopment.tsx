@@ -2,28 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// --- REUSABLE SUB-COMPONENT: READ MORE BUTTON ---
-function ReadMoreButton() {
-  return (
-    <motion.button 
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.98 }}
-      className="group flex items-center justify-center gap-2.5 bg-[#98F090] border border-[#219653]/20 hover:bg-[#82e07a] transition-all duration-300 rounded-[8px] w-[174px] h-[53px] shadow-sm relative overflow-hidden"
-    >
-      <div className="w-5 h-5 flex items-center justify-center shrink-0 relative z-10 group-hover:rotate-[360deg] transition-transform duration-500">
-        <img 
-          src="/assets/Union-6.svg" 
-          alt="" 
-          className="w-full h-full object-contain"
-        />
-      </div>
-      <span className="text-black font-semibold text-sm relative z-10">
-        Read more
-      </span>
-    </motion.button>
-  );
-}
-
 // --- MAIN COMPONENT: SOFDEVELOPMENT ---
 export function SofDevelopment() {
   return (
